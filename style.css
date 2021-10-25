@@ -104,7 +104,35 @@ body {
 }
 
 .outer-skills-list {
+    align-items: flex-start;
     gap: 1rem;
+}
+
+.inner-skills-list {
+    border-top: 1px solid var(--color-primary, #000000);
+    position: relative;
+}
+
+.inner-skills-list:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1rem;
+    background-color: var(--color-primary, #000000);
+}
+
+.inner-skills-list:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 1rem;
+    background-color: var(--color-primary, #000000);
 }
 
 .skills-list__item {
@@ -116,56 +144,19 @@ body {
 }
 
 .outer-skills-list__item {
-    position: relative;
-    min-width: 100px;
     padding: 0.5rem;
 }
 
-.outer-skills-list__item:before,
-.outer-skills-list__item:after,
-.corner-border:before,
-.corner-border:after {
-    content: "";
-    position: absolute;
-    display: block;
-    padding: 15px;
-}
-
-.outer-skills-list__item:before {
-    top: 0;
-    left: 0;
-    border-top: 1px solid var(--color-primary, #000000);
-    border-left: 1px solid var(--color-primary, #000000);
-}
-
-.outer-skills-list__item:after {
-    top: 0;
-    right: 0;
-    border-top: 1px solid var(--color-primary, #000000);
-    border-right: 1px solid var(--color-primary, #000000);
-}
-
-.corner-border:before {
-    bottom: 0;
-    left: 0;
-    border-bottom: 1px solid var(--color-primary, #000000);
-    border-left: 1px solid var(--color-primary, #000000);
-}
-
-.corner-border:after {
-    bottom: 0;
-    right: 0;
-    border-bottom: 1px solid var(--color-primary, #000000);
-    border-right: 1px solid var(--color-primary, #000000);
-}
-
 .inner-skills-list__item {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+    flex-direction: row;
 }
 
-.inner-skills-list__item:not(:last-child) {
-    border-right: 1px solid var(--color-primary, #000000);
+.inner-skills-list__item:not(:last-child):after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 1rem;
+    background-color: var(--color-primary);
 }
 
 .skill-wrapper {
@@ -176,8 +167,16 @@ body {
     gap: 0.25rem;
 }
 
-.skill-wrapper:not(:last-child) {
-    margin-bottom: 0.5rem;
+.outer-skill-wrapper:after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 1rem;
+    background-color: var(--color-primary, #000000);
+}
+
+.inner-skill-wrapper {
+    padding: 0.5rem;
 }
 
 .skill-wrapper__header {
