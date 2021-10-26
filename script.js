@@ -1,9 +1,8 @@
 function checkLastInARow() {
-    const lists = document.querySelectorAll(".skills-list");
+    const lists = document.querySelectorAll(".inner-skills-list");
 
     for (let list of lists) {
         const listItem = list.querySelectorAll(".inner-skills-list__item");
-
         const rows = new Map();
 
         for (let element of listItem) {
@@ -15,9 +14,9 @@ function checkLastInARow() {
 
         for (let row of rows.values()) {
             for (let element of row) {
-                element.style.borderRight = "1px solid var(--color-primary, #000000)";
+                element.classList.remove("inner-skills-list__item--hidden-separator");
             }
-            row[row.length - 1].style.borderRight = "none";
+            row[row.length - 1].classList.add("inner-skills-list__item--hidden-separator");
         }
     }
 }

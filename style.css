@@ -159,6 +159,10 @@ body {
     background-color: var(--color-primary);
 }
 
+.inner-skills-list__item--hidden-separator:not(:last-child):after {
+    display: none;
+}
+
 .skill-wrapper {
     display: flex;
     flex-direction: column;
