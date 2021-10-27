@@ -261,9 +261,9 @@
                         <div class="my-inner-swiper-wrapper">
                             <div class="swiper my-swiper">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">Slide 1</div>
-                                    <div class="swiper-slide">Slide 2</div>
-                                    <div class="swiper-slide">Slide 3</div>
+                                    <div class="swiper-slide my-swiper-slide">Slide 1</div>
+                                    <div class="swiper-slide my-swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide my-swiper-slide">Slide 3</div>
                                 </div>
                             </div>
                             <div class="my-swiper-pagination"></div>
@@ -284,6 +284,7 @@
         const swiper = new Swiper(".my-swiper", {
             grabCursor: true,
             autoplay: {},
+            spaceBetween: 1,
             navigation: {
                 prevEl: ".my-swiper-button-prev",
                 nextEl: ".my-swiper-button-next",

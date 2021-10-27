@@ -221,6 +221,11 @@ body {
     width: 500px;
     height: 500px;
     border: 1px solid var(--color-primary, #000000);
+    background-color: var(--color-primary, #000000);
+}
+
+.my-swiper-slide {
+    background-color: var(--background-color, #ffffff);
 }
 
 .my-outer-swiper-wrapper {
