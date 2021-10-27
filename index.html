@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Резюме</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +21,7 @@
         <nav class="nav">
             <ul class="nav__menu">
                 <li class="nav__item"><a class="link nav__item-link" href="#about-me">Обо мне</a></li>
-                <li class="nav__item"><a class="link nav__item-link" href="#">Frontend проекты</a></li>
+                <li class="nav__item"><a class="link nav__item-link" href="#frontend-projects">Frontend проекты</a></li>
                 <li class="nav__item"><a class="link nav__item-link" href="#">Проекты на других языках</a></li>
                 <li class="nav__item"><a class="link nav__item-link" href="#">Контакты</a></li>
             </ul>
@@ -236,11 +238,65 @@
                 </ul>
             </section>
         </section>
+
+        <section id="frontend-projects">
+            <h2 class="main__title">Frontend проекты</h2>
+            <section>
+                <h3>Сайт-резюме</h3>
+                <div class="project-section">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempore dolor qui distinctio
+                        magnam. Blanditiis corrupti illum doloremque vel possimus fugit, minus commodi dolore architecto
+                        perferendis voluptatibus eligendi natus porro dolorem fugiat, suscipit necessitatibus? Delectus
+                        error est libero neque vel. Assumenda laudantium ab quo explicabo, libero odio aperiam neque
+                        doloribus!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, commodi.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, veniam vel! Laudantium beatae
+                        optio porro animi deleniti obcaecati veniam nisi. Sunt soluta exercitationem perspiciatis nobis
+                        amet labore voluptates quo non dolor eaque. Voluptatum quod illum blanditiis minima voluptas
+                        reiciendis enim?
+                    </p>
+
+                    <div class="my-outer-swiper-wrapper">
+                        <div class="my-swiper-button my-swiper-button-prev"></div>
+                        <div class="my-inner-swiper-wrapper">
+                            <div class="swiper my-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">Slide 1</div>
+                                    <div class="swiper-slide">Slide 2</div>
+                                    <div class="swiper-slide">Slide 3</div>
+                                </div>
+                            </div>
+                            <div class="my-swiper-pagination"></div>
+                        </div>
+                        <div class="my-swiper-button my-swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
     </main>
 
     <footer></footer>
 
     <script src="script.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".my-swiper", {
+            grabCursor: true,
+            autoplay: {},
+            navigation: {
+                prevEl: ".my-swiper-button-prev",
+                nextEl: ".my-swiper-button-next",
+                disabledClass: "my-swiper-button-disabled"
+            },
+            pagination: {
+                el: ".my-swiper-pagination",
+                clickable: true,
+                bulletClass: "my-swiper-pagination-bullet",
+                bulletActiveClass: "my-swiper-pagination-bullet-active",
+            },
+        });
+    </script>
 </body>
 
 </html>
