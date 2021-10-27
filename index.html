@@ -11,9 +11,9 @@
 
     <link rel="stylesheet" href="style.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -37,8 +37,8 @@
                     В 2021 году окончил Санкт-Петербургский государственный университет аэрокосмического
                     приборостроения (СПб ГУАП) по программе бакалавриата:
                 <ul>
-                    <li>направление - "Информатика и вычислительная техника";</li>
-                    <li>профиль - "Автоматизированные системы обработки информации и управления".</li>
+                    <li>направление - "Информатика и вычислительная техника"</li>
+                    <li>профиль - "Автоматизированные системы обработки информации и управления"</li>
                 </ul>
 
                 В ходе обучения изучал различные <a class="link link--thin" href="#">информационные технологии</a>,
@@ -244,20 +244,34 @@
             <section>
                 <h3>Сайт-резюме</h3>
                 <div class="project-section">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempore dolor qui distinctio
-                        magnam. Blanditiis corrupti illum doloremque vel possimus fugit, minus commodi dolore architecto
-                        perferendis voluptatibus eligendi natus porro dolorem fugiat, suscipit necessitatibus? Delectus
-                        error est libero neque vel. Assumenda laudantium ab quo explicabo, libero odio aperiam neque
-                        doloribus!
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, commodi.
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, veniam vel! Laudantium beatae
-                        optio porro animi deleniti obcaecati veniam nisi. Sunt soluta exercitationem perspiciatis nobis
-                        amet labore voluptates quo non dolor eaque. Voluptatum quod illum blanditiis minima voluptas
-                        reiciendis enim?
-                    </p>
-
+                    <div>
+                        <h4>Технологии:</h4>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>SwiperJS</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tempore dolor qui
+                            distinctio
+                            magnam. Blanditiis corrupti illum doloremque vel possimus fugit, minus commodi dolore
+                            architecto
+                            perferendis voluptatibus eligendi natus porro dolorem fugiat, suscipit necessitatibus?
+                            Delectus
+                            error est libero neque vel. Assumenda laudantium ab quo explicabo, libero odio aperiam neque
+                            doloribus!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, commodi.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, veniam vel! Laudantium beatae
+                            optio porro animi deleniti obcaecati veniam nisi. Sunt soluta exercitationem perspiciatis
+                            nobis
+                            amet labore voluptates quo non dolor eaque. Voluptatum quod illum blanditiis minima voluptas
+                            reiciendis enim?
+                        </p>
+                    </div>
                     <div class="my-outer-swiper-wrapper">
-                        <div class="my-swiper-button my-swiper-button-prev"></div>
+                        <div class="my-swiper-button my-swiper-button-prev">
+                            <div class="my-swiper-button__arrow my-swiper-button__prev-arrow"></div>
+                        </div>
                         <div class="my-inner-swiper-wrapper">
                             <div class="swiper my-swiper">
                                 <div class="swiper-wrapper">
@@ -268,7 +282,9 @@
                             </div>
                             <div class="my-swiper-pagination"></div>
                         </div>
-                        <div class="my-swiper-button my-swiper-button-next"></div>
+                        <div class="my-swiper-button my-swiper-button-next">
+                            <div class="my-swiper-button__arrow my-swiper-button__next-arrow"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -277,18 +293,17 @@
 
     <footer></footer>
 
-    <script src="script.js"></script>
-
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper(".my-swiper", {
             grabCursor: true,
             autoplay: {},
+            mousewheel: {},
             spaceBetween: 1,
             navigation: {
                 prevEl: ".my-swiper-button-prev",
                 nextEl: ".my-swiper-button-next",
-                disabledClass: "my-swiper-button-disabled"
+                disabledClass: "my-swiper-button--disabled"
             },
             pagination: {
                 el: ".my-swiper-pagination",
@@ -298,6 +313,8 @@
             },
         });
     </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
