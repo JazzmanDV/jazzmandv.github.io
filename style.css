@@ -277,6 +277,10 @@ img {
     height: 100%;
 }
 
+.my-outer-swiper-wrapper--full-screen .my-middle-swiper-wrapper__expand-swiper-button {
+    opacity: 1;
+}
+
 .my-inner-swiper-wrapper {
     position: relative;
     display: flex;
