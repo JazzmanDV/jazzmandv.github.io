@@ -21,12 +21,20 @@ function checkLastInARow() {
     }
 }
 
-if (document.readyState === "complete") {
+function onDocumentReady() {
     checkLastInARow();
     window.addEventListener("resize", checkLastInARow);
+
+    document.querySelector(".my-middle-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+        const outerSwiperWrapper = document.querySelector(".my-outer-swiper-wrapper");
+        outerSwiperWrapper.classList.toggle("my-outer-swiper-wrapper--full-screen");
+    });
+}
+
+if (document.readyState === "complete") {
+    onDocumentReady();
 } else {
     window.addEventListener("load", () => {
-        checkLastInARow();
-        window.addEventListener("resize", checkLastInARow);
+        onDocumentReady();
     });
 }
