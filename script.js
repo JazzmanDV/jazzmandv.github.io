@@ -43,9 +43,49 @@ function onDocumentReady() {
     checkLastInARow();
     window.addEventListener("resize", checkLastInARow);
 
-    document.querySelector(".my-middle-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+    document.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+        const body = document.querySelector("body");
         const outerSwiperWrapper = document.querySelector(".my-outer-swiper-wrapper");
-        outerSwiperWrapper.classList.toggle("my-outer-swiper-wrapper--full-screen");
+
+        const replacer = body.appendChild(outerSwiperWrapper.cloneNode(true));
+
+        const swiper = new Swiper(replacer.querySelector(".my-swiper"), {
+            initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
+            grabCursor: true,
+            // autoplay: {},
+            mousewheel: {},
+            spaceBetween: 1,
+            navigation: {
+                prevEl: replacer.querySelector(".my-swiper-button-prev"),
+                nextEl: replacer.querySelector(".my-swiper-button-next"),
+                disabledClass: "my-swiper-button--disabled",
+            },
+            pagination: {
+                el: replacer.querySelector(".my-swiper-pagination"),
+                clickable: true,
+                bulletClass: "my-swiper-pagination-bullet",
+                bulletActiveClass: "my-swiper-pagination-bullet--active",
+            },
+        });
+
+        body.classList.add("body--full-screen");
+        replacer.classList.add("my-outer-swiper-wrapper--full-screen");
+
+        replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+            body.classList.remove("body--full-screen");
+
+            // Необходимо для работы обратной анимации модалки
+            replacer.classList.remove("my-outer-swiper-wrapper--full-screen");
+            requestAnimationFrame(() => {
+                replacer.classList.add("my-outer-swiper-wrapper--full-screen");
+                replacer.style.animationDirection = "reverse";
+                replacer.querySelector(".my-middle-swiper-wrapper").style.animationDirection = "reverse";
+            });
+
+            setTimeout(() => {
+                body.removeChild(replacer);
+            }, 500);
+        });
     });
 }
 

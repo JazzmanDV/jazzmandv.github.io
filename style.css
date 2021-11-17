@@ -1,6 +1,8 @@
 /* ---------SETUP--------- */
 
-* {
+*,
+*:before,
+*:after {
     font-family: "Exo 2", sans-serif;
     font-weight: 300;
     box-sizing: border-box;
@@ -26,6 +28,10 @@ ul {
     margin: 0 0 0.5rem 0;
 }
 
+section {
+    margin: 0 0 1rem 0;
+}
+
 h1,
 h2,
 h3,
@@ -35,10 +41,9 @@ h4 {
 
 img {
     display: block;
+    width: 100%;
     height: 100%;
     object-fit: contain;
-    object-position: center;
-    margin: 0 auto;
 }
 
 /* ---------HEADER--------- */
@@ -254,22 +259,57 @@ img {
     background-color: var(--background-color, #ffffff);
 }
 
-.my-outer-swiper-wrapper--full-screen {
-    z-index: 999;
-    position: fixed;
-    inset: 0;
-    background-color: #929292;
+.my-outer-swiper-wrapper {
+    transition: background-color 0.5s;
 }
 
-.my-outer-swiper-wrapper--full-screen .my-inner-swiper-wrapper {
+.my-middle-swiper-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes outer-swiper-full-screen {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen {
+    z-index: 9999;
+    position: fixed;
+    inset: 0;
+
+    animation: 0.5s outer-swiper-full-screen both;
+}
+
+@keyframes middle-swiper-full-screen {
+    from {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen .my-middle-swiper-wrapper {
+    position: fixed;
+    z-index: 9999;
+
     --full-screen-width: 90vw;
     --full-screen-height: 90vh;
 
     top: calc((100vh - var(--full-screen-height, 90vh)) / 2);
-    left: calc((100vw - var(--full-screen-width), 90vw) / 2);
+    bottom: calc((100vh - var(--full-screen-height, 90vh)) / 2);
+    left: calc((100vw - var(--full-screen-width, 90vw)) / 2);
+    right: calc((100vw - var(--full-screen-width, 90vw)) / 2);
 
-    width: var(--full-screen-width, 90vw);
-    height: var(--full-screen-height, 90vh);
+    animation: 0.5s middle-swiper-full-screen both;
 }
 
 .my-outer-swiper-wrapper--full-screen .my-swiper {
@@ -277,38 +317,26 @@ img {
     height: 100%;
 }
 
-.my-outer-swiper-wrapper--full-screen .my-middle-swiper-wrapper__expand-swiper-button {
-    opacity: 1;
+.body--full-screen {
+    /* overflow: hidden; */
 }
 
 .my-inner-swiper-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-}
-
-.my-outer-swiper-wrapper:hover .my-middle-swiper-wrapper__expand-swiper-button {
-    opacity: 1;
-}
-
-.my-middle-swiper-wrapper {
-    position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
+    position: relative;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
-.my-middle-swiper-wrapper__expand-swiper-button {
-    padding: 0.2rem;
-
+.my-inner-swiper-wrapper__expand-swiper-button {
+    position: absolute;
     cursor: pointer;
 
-    position: absolute;
+    padding: 0.2rem;
+
     top: 0rem;
     right: 0rem;
 
@@ -320,7 +348,13 @@ img {
     border: 1px solid var(--color-primary, #000000);
     background-color: var(--background-color, #ffffff);
     opacity: 0;
-    transition: 0.25s;
+    transition: opacity 0.25s;
+}
+
+.my-outer-swiper-wrapper--full-screen .my-inner-swiper-wrapper__expand-swiper-button,
+.my-outer-swiper-wrapper:hover .my-inner-swiper-wrapper__expand-swiper-button,
+.my-inner-swiper-wrapper__expand-swiper-button:focus-visible {
+    opacity: 1;
 }
 
 .my-swiper-button {
@@ -394,7 +428,7 @@ img {
     height: 0.3rem;
     border: 1px solid var(--color-primary, #000000);
     background-color: var(--background-color, #ffffff);
-    transition: 0.25s;
+    transition: background-color 0.25s;
 }
 
 .my-swiper-pagination-bullet:hover {
