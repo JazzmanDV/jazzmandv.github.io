@@ -401,6 +401,6 @@ img {
     cursor: pointer;
 }
 
-.my-swiper-pagination-bullet-active {
+.my-swiper-pagination-bullet--active {
     background-color: var(--color-primary, #000000);
 }

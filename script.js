@@ -22,6 +22,24 @@ function checkLastInARow() {
 }
 
 function onDocumentReady() {
+    const swiper = new Swiper(".my-swiper", {
+        grabCursor: true,
+        // autoplay: {},
+        mousewheel: {},
+        spaceBetween: 1,
+        navigation: {
+            prevEl: ".my-swiper-button-prev",
+            nextEl: ".my-swiper-button-next",
+            disabledClass: "my-swiper-button--disabled",
+        },
+        pagination: {
+            el: ".my-swiper-pagination",
+            clickable: true,
+            bulletClass: "my-swiper-pagination-bullet",
+            bulletActiveClass: "my-swiper-pagination-bullet--active",
+        },
+    });
+
     checkLastInARow();
     window.addEventListener("resize", checkLastInARow);
 
