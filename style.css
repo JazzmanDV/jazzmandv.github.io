@@ -1,3 +1,9 @@
+/* ---------UTILS--------- */
+
+.text-align-center {
+    text-align: center;
+}
+
 /* ---------SETUP--------- */
 
 *,
@@ -95,6 +101,10 @@ img {
     transition: color 0.25s;
 }
 
+.link:visited {
+    color: var(--color-primary, #000000);
+}
+
 .link:hover {
     color: var(--color-primary-hovered, #0284c7);
 }
@@ -152,7 +162,7 @@ img {
     top: 0;
     left: 0;
     width: 1px;
-    height: 1rem;
+    height: 50%;
     background-color: var(--color-primary, #000000);
 }
 
@@ -163,7 +173,7 @@ img {
     top: 0;
     right: 0;
     width: 1px;
-    height: 1rem;
+    height: 50%;
     background-color: var(--color-primary, #000000);
 }
 
@@ -180,6 +190,7 @@ img {
 }
 
 .inner-skills-list__item {
+    margin-top: auto;
     flex-direction: row;
 }
 
@@ -187,7 +198,7 @@ img {
     content: "";
     display: inline-block;
     width: 1px;
-    height: 1rem;
+    height: 2rem;
     background-color: var(--color-primary);
 }
 
@@ -238,6 +249,30 @@ img {
 }
 
 /* ---Frontend проекты--- */
+
+.tech-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+.tech-list__item {
+    margin: auto 0;
+}
+
+.tech-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.tech-icon {
+    width: 2rem;
+    margin: 0 auto;
+}
 
 .project-section {
     display: flex;

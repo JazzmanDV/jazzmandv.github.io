@@ -2,14 +2,16 @@ function checkLastInARow() {
     const lists = document.querySelectorAll(".inner-skills-list");
 
     for (let list of lists) {
-        const listItem = list.querySelectorAll(".inner-skills-list__item");
+        const listItems = list.querySelectorAll(".inner-skills-list__item");
         const rows = new Map();
 
-        for (let element of listItem) {
-            if (!rows.has(element.offsetTop)) {
-                rows.set(element.offsetTop, []);
+        for (let listItem of listItems) {
+            // Сравниваем по нижней части компонента (по скилл-бару), т.к. они выровнены в линию
+            const skillLevel = listItem.querySelector(".skill-level");
+            if (!rows.has(skillLevel.offsetTop)) {
+                rows.set(skillLevel.offsetTop, []);
             }
-            rows.get(element.offsetTop).push(element);
+            rows.get(skillLevel.offsetTop).push(listItem);
         }
 
         for (let row of rows.values()) {
