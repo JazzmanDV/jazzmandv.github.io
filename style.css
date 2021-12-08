@@ -50,13 +50,6 @@ h4 {
     font-weight: 500;
 }
 
-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
 .link {
     color: var(--color-primary, #000000);
     transition: 0.25s color;
@@ -92,13 +85,17 @@ img {
     border-color: var(--color-primary-hovered, #0284c7);
 }
 
-.svg-icon {
-    width: 100%;
-    height: auto;
+.button__icon > line {
+    transition: 0.25s stroke;
 }
 
-.svg-icon > line {
-    transition: 0.25s stroke;
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
 }
 
 /* ---------HEADER--------- */
@@ -327,6 +324,12 @@ img {
     background-color: var(--background-color, #ffffff);
 }
 
+.my-swiper-slide__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .my-outer-swiper-wrapper {
     transition: 0.5s background-color;
 }
@@ -408,7 +411,7 @@ img {
     transform: translateX(2.5rem);
 }
 
-.my-inner-swiper-wrapper__expand-swiper-button:hover .svg-icon > line {
+.my-inner-swiper-wrapper__expand-swiper-button:hover .button__icon > line {
     stroke: var(--color-primary-hovered, #0284c7);
 }
 
