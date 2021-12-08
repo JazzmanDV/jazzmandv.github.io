@@ -89,6 +89,10 @@ function onDocumentReady() {
             }, 500);
         });
     });
+
+    document.querySelector(".nav__button").addEventListener("click", () => {
+        document.querySelector(".nav__menu").classList.toggle("nav__menu--opened");
+    });
 }
 
 if (document.readyState === "complete") {
