@@ -22,6 +22,11 @@
 }
 
 body {
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 0 1rem;
+
     background-color: var(--background-color, #ffffff);
 }
 
@@ -52,6 +57,22 @@ img {
     object-fit: contain;
 }
 
+.link {
+    color: var(--color-primary, #000000);
+    transition: 0.25s color;
+}
+
+.link:visited {
+    color: var(--color-primary, #000000);
+}
+
+.link:hover {
+    color: var(--color-primary-hovered, #0284c7);
+}
+
+.link--thin {
+    text-decoration-thickness: 1px;
+}
 /* ---------HEADER--------- */
 
 .header {
@@ -59,7 +80,7 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 9999;
 
     margin: 0 1rem;
     border-bottom: 1px solid var(--color-primary, #000000);
@@ -79,6 +100,8 @@ img {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    background-color: var(--background-color, #ffffff);
 }
 
 .nav__item {
@@ -96,19 +119,6 @@ img {
     background-color: var(--color-primary);
 }
 
-.link {
-    color: var(--color-primary, #000000);
-    transition: color 0.25s;
-}
-
-.link:visited {
-    color: var(--color-primary, #000000);
-}
-
-.link:hover {
-    color: var(--color-primary-hovered, #0284c7);
-}
-
 .nav__item-link {
     display: inline-block;
     padding: 0.5rem;
@@ -119,16 +129,8 @@ img {
 
 /* ---Обо мне--- */
 
-.link--thin {
-    text-decoration-thickness: 1px;
-}
-
 .main {
-    max-width: 1200px;
     margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
 }
 
 .main__title {
@@ -162,7 +164,7 @@ img {
     top: 0;
     left: 0;
     width: 1px;
-    height: 50%;
+    height: 1rem;
     background-color: var(--color-primary, #000000);
 }
 
@@ -173,7 +175,7 @@ img {
     top: 0;
     right: 0;
     width: 1px;
-    height: 50%;
+    height: 1rem;
     background-color: var(--color-primary, #000000);
 }
 
@@ -277,12 +279,10 @@ img {
 .project-section {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     gap: 0.5rem;
 }
 
 .my-swiper {
-    z-index: 0;
     width: 25rem;
     height: 25rem;
     margin: 0;
@@ -295,7 +295,7 @@ img {
 }
 
 .my-outer-swiper-wrapper {
-    transition: background-color 0.5s;
+    transition: 0.5s background-color;
 }
 
 .my-middle-swiper-wrapper {
@@ -305,7 +305,7 @@ img {
     align-items: center;
 }
 
-@keyframes outer-swiper-full-screen {
+@keyframes outer-swiper--full-screen {
     from {
         background-color: rgba(0, 0, 0, 0);
     }
@@ -319,10 +319,10 @@ img {
     position: fixed;
     inset: 0;
 
-    animation: 0.5s outer-swiper-full-screen both;
+    animation: 0.5s outer-swiper--full-screen both;
 }
 
-@keyframes middle-swiper-full-screen {
+@keyframes middle-swiper--full-screen {
     from {
         opacity: 0;
         transform: translateY(50vh);
@@ -344,7 +344,7 @@ img {
     left: calc((100vw - var(--full-screen-width, 90vw)) / 2);
     right: calc((100vw - var(--full-screen-width, 90vw)) / 2);
 
-    animation: 0.5s middle-swiper-full-screen both;
+    animation: 0.5s middle-swiper--full-screen both;
 }
 
 .my-outer-swiper-wrapper--full-screen .my-swiper {
@@ -384,12 +384,6 @@ img {
     background-color: var(--background-color, #ffffff);
     opacity: 0;
     transition: opacity 0.25s;
-}
-
-.my-outer-swiper-wrapper--full-screen .my-inner-swiper-wrapper__expand-swiper-button,
-.my-outer-swiper-wrapper:hover .my-inner-swiper-wrapper__expand-swiper-button,
-.my-inner-swiper-wrapper__expand-swiper-button:focus-visible {
-    opacity: 1;
 }
 
 .my-swiper-button {
@@ -463,7 +457,7 @@ img {
     height: 0.3rem;
     border: 1px solid var(--color-primary, #000000);
     background-color: var(--background-color, #ffffff);
-    transition: background-color 0.25s;
+    transition: 0.25s background-color;
 }
 
 .my-swiper-pagination-bullet:hover {
