@@ -322,6 +322,7 @@ svg {
 }
 
 .my-swiper-slide {
+    height: auto;
     background-color: var(--background-color, #ffffff);
 }
 
@@ -497,6 +498,10 @@ svg {
 /* ---------ADAPTIVE--------- */
 
 @media (max-width: 770px) {
+    .main {
+        margin-top: 3.75rem;
+    }
+
     .nav {
         flex-direction: column;
         align-items: flex-end;
@@ -658,5 +663,28 @@ svg {
     .project-section {
         flex-direction: column;
         align-items: center;
+    }
+
+    .my-outer-swiper-wrapper {
+        width: calc(100% - 5rem);
+    }
+
+    .my-swiper {
+        width: 100%;
+        height: auto;
+    }
+
+    .my-inner-swiper-wrapper__expand-swiper-button {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .my-outer-swiper-wrapper {
+        width: 100%;
+    }
+
+    .my-swiper-button__arrow {
+        display: none;
     }
 }

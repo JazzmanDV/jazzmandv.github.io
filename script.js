@@ -27,7 +27,7 @@ function onDocumentReady() {
     const swiper = new Swiper(".my-swiper", {
         grabCursor: true,
         // autoplay: {},
-        mousewheel: {},
+        // mousewheel: {},
         spaceBetween: 1,
         navigation: {
             prevEl: ".my-swiper-button-prev",
@@ -55,7 +55,7 @@ function onDocumentReady() {
             initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
             grabCursor: true,
             // autoplay: {},
-            mousewheel: {},
+            // mousewheel: {},
             spaceBetween: 1,
             navigation: {
                 prevEl: replacer.querySelector(".my-swiper-button-prev"),
