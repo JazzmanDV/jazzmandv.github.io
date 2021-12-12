@@ -93,6 +93,10 @@ function onDocumentReady() {
     document.querySelector(".nav__button").addEventListener("click", () => {
         document.querySelector(".nav__menu").classList.toggle("nav__menu--opened");
     });
+
+    document.querySelector(".button-try").addEventListener("click", () => {
+        document.querySelector(".button__right-arrow").classList.toggle("button__right-arrow--active");
+    });
 }
 
 if (document.readyState === "complete") {
