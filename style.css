@@ -14,13 +14,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    font-size: 20px;
-    --background-color: #ffffff;
-    --color-primary: #000000;
-    --color-primary-hovered: #0284c7;
-}
-
 body {
     max-width: 1200px;
 
@@ -28,6 +21,39 @@ body {
     padding: 0 1rem;
 
     background-color: var(--background-color, #ffffff);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    font-size: 20px;
+    --background-color: #ffffff;
+    --color-primary: #000000;
+    --color-primary-hovered: #0284c7;
 }
 
 h1,
@@ -46,7 +72,9 @@ section {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-weight: 500;
 }
 
