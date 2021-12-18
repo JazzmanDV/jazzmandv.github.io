@@ -95,7 +95,7 @@ function onDocumentReady() {
     });
 
     document.querySelector(".button-try").addEventListener("click", () => {
-        document.querySelector(".button__right-arrow").classList.toggle("button__right-arrow--active");
+        document.querySelector(".button-try").classList.toggle("button-try--active");
     });
 }
 
