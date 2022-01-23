@@ -107,7 +107,7 @@ h6 {
 
     padding: 0.5rem;
 
-    background-color: inherit;
+    background-color: var(--background-color, #ffffff);
 
     border: none;
     box-shadow: var(--box-shadow-button, 0px 0px 7px 1px rgba(35, 60, 80, 0.2));
@@ -421,8 +421,8 @@ h6 {
     width: 25rem;
     height: 25rem;
     margin: 0;
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--color-primary, #000000);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
 }
 
 .my-swiper-slide {
@@ -452,7 +452,7 @@ h6 {
         background-color: rgba(0, 0, 0, 0);
     }
     to {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.35);
     }
 }
 

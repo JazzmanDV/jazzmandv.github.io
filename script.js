@@ -26,8 +26,6 @@ function checkLastInARow() {
 function onDocumentReady() {
     const swiper = new Swiper(".my-swiper", {
         grabCursor: true,
-        // autoplay: {},
-        // mousewheel: {},
         spaceBetween: 1,
         navigation: {
             prevEl: ".my-swiper-button-prev",
