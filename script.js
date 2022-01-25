@@ -52,8 +52,6 @@ function onDocumentReady() {
         const swiper = new Swiper(replacer.querySelector(".my-swiper"), {
             initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
             grabCursor: true,
-            // autoplay: {},
-            // mousewheel: {},
             spaceBetween: 1,
             navigation: {
                 prevEl: replacer.querySelector(".my-swiper-button-prev"),
@@ -89,7 +87,20 @@ function onDocumentReady() {
     });
 
     document.querySelector(".nav__button").addEventListener("click", () => {
-        document.querySelector(".nav__menu").classList.toggle("nav__menu--opened");
+        const navMenu = document.querySelector(".nav__menu");
+        navMenu.classList.toggle("nav__menu--opened");
+
+        if (navMenu.classList.contains("nav__menu--opened")) {
+            navMenu.style.height = "auto";
+            const fullHeight = getComputedStyle(navMenu).height;
+            navMenu.style.height = "0px";
+
+            requestAnimationFrame(() => {
+                navMenu.style.height = fullHeight;
+            });
+        } else {
+            navMenu.style.height = "0px";
+        }
     });
 
     document.querySelector(".button-try").addEventListener("click", () => {
