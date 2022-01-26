@@ -243,8 +243,6 @@ h6 {
 
     position: relative;
     text-align: center;
-
-    background-color: var(--background-color, #ffffff);
 }
 
 .main__title:before,
