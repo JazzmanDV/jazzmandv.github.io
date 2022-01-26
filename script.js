@@ -43,6 +43,18 @@ function onDocumentReady() {
     checkLastInARow();
     window.addEventListener("resize", checkLastInARow);
 
+    // Сбрасываем стили для верхнего меню при ресайзе
+    const mediaQuery = window.matchMedia("(max-width: 770px)");
+    mediaQuery.addEventListener("change", () => {
+        console.log(1);
+        if (!mediaQuery.matches) {
+            console.log(2);
+            const navMenu = document.querySelector(".nav__menu");
+            navMenu.style.height = "";
+            navMenu.classList.remove("nav__menu--opened");
+        }
+    });
+
     document.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
         const body = document.querySelector("body");
         const outerSwiperWrapper = document.querySelector(".my-outer-swiper-wrapper");
