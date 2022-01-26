@@ -93,6 +93,7 @@ function onDocumentReady() {
             });
 
             setTimeout(() => {
+                swiper.destroy();
                 body.removeChild(replacer);
             }, 500);
         });
