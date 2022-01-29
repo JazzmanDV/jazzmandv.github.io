@@ -16,7 +16,9 @@
 
 body {
     margin: 0;
-    background-color: var(--background-color, #ffffff);
+    background-image: url("/img/5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img,
@@ -48,10 +50,11 @@ h6 {
 :root {
     font-size: 20px;
 
-    --background-color: #ffffff;
+    --background-color: rgba(255, 255, 255, 0.2);
+    --background-color-button: rgba(255, 255, 255, 0.8);
     --color-primary: #000000;
     --color-primary-hovered: #0284c7;
-    --box-shadow: 0px 0px 10px 0px rgba(35, 60, 80, 0.2);
+    --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     --box-shadow-button: 0px 0px 7px 1px rgba(35, 60, 80, 0.2);
 }
 
@@ -90,8 +93,31 @@ h6 {
     color: var(--color-primary-hovered, #0284c7);
 }
 
+.link:hover line {
+    stroke: var(--color-primary-hovered, #0284c7);
+}
+
 .link--thin {
     text-decoration-thickness: 1px;
+}
+
+.link-external {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.link-external__icon {
+    width: 1.5em;
+}
+
+.link-external__icon--s {
+    width: 1em;
+}
+
+.link line {
+    transition: 0.25s stroke;
 }
 
 .button {
@@ -100,20 +126,22 @@ h6 {
 
     cursor: pointer;
 
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 
     padding: 0.5rem;
 
-    background-color: var(--background-color, #ffffff);
-
-    border: none;
+    background-color: var(--background-color-button, rgba(255, 255, 255, 0.8));
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
     box-shadow: var(--box-shadow-button, 0px 0px 7px 1px rgba(35, 60, 80, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 
-    transition: 0.25s border-color, 0.25s color;
+    transition: 0.25s color, 0.25s box-shadow;
 }
 
 .button:hover {
-    border-color: var(--color-primary-hovered, #0284c7);
+    /* box-shadow: 0px 0px 7px 3px rgba(35, 60, 80, 0.2); */
     color: var(--color-primary-hovered, #0284c7);
 }
 
@@ -129,30 +157,48 @@ h6 {
     width: 2rem;
     height: 2rem;
     padding: 0.25rem;
+    border-radius: 0.5rem;
 }
 
-.button__right-arrow {
+.button-try {
+    margin: 0 0 0.5rem 0;
+}
+
+.button-try__right-arrow {
     align-self: flex-end;
     height: 1em;
     transition: 0.5s transform;
 }
 
-.button-try--active .button__right-arrow {
+.button-try--active .button-try__right-arrow {
     transform: rotate(90deg);
 }
 
-.button-try--active + .iframe {
+.button-try--active + .iframe-wrapper {
     height: 300px;
+    margin: 0.5rem 0;
+}
+
+.iframe-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+
+    margin: 0;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+
+    transition: 0.5s height, 0.5s margin;
 }
 
 .iframe {
     width: 100%;
-    height: 0;
-
-    margin: 0.5rem 0;
-
-    border-radius: 0.5rem;
-    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
+    height: 100%;
+    border: none;
+}
 
 .bullet-list {
     display: flex;
@@ -166,7 +212,7 @@ h6 {
     height: 0.3rem;
     border-radius: 0.5rem;
     border: 1px solid var(--color-primary, #000000);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
 }
 
 .bullet-list__item--active {
@@ -184,8 +230,18 @@ h6 {
 
     padding: 0 1rem;
 
-    background-color: var(--background-color, #ffffff);
-    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .nav {
@@ -202,8 +258,6 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
-    background-color: var(--background-color, #ffffff);
 }
 
 .nav__item {
@@ -250,8 +304,11 @@ h6 {
 .main__section > section {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
-    background-color: var(--background-color, #ffffff);
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .main__title {
@@ -301,30 +358,21 @@ h6 {
 }
 
 .inner-skills-list {
+    position: relative;
+}
+
+.inner-skills-list:before {
+    content: "";
+    display: block;
+    position: absolute;
+
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     border: 1px solid var(--color-primary, #000000);
     border-bottom: none;
-    position: relative;
-}
 
-.inner-skills-list:before,
-.inner-skills-list:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 1rem;
-    width: 1px;
-    height: 100%;
-    background-color: var(--background-color, #ffffff);
-}
-
-.inner-skills-list:before {
-    left: -1px;
-}
-
-.inner-skills-list:after {
-    right: -1px;
+    width: 100%;
+    height: 1rem;
 }
 
 .skills-list__item {
@@ -349,7 +397,7 @@ h6 {
     display: inline-block;
     width: 1px;
     height: 2rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #000000);
 }
 
 .inner-skills-list__item--hidden-separator:not(:last-child):after {
@@ -417,12 +465,12 @@ h6 {
     height: 25rem;
     margin: 0;
     border-radius: 0.5rem;
-    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
 }
 
 .my-swiper-slide {
     height: auto;
-    background-color: var(--background-color, #ffffff);
+    background-color: #ffffff;
 }
 
 .my-swiper-slide__img {
@@ -489,8 +537,8 @@ h6 {
     height: 100%;
 }
 
-.my-outer-swiper-wrapper--full-screen .my-swiper-pagination-bullet:not(.my-swiper-pagination-bullet--active) {
-    background-color: var(--background-color, #ffffff);
+.my-outer-swiper-wrapper--full-screen .swiper__bullet-list-item:not(.bullet-list__item--active) {
+    background-color: #ffffff;
 }
 
 .body--full-screen {
@@ -600,7 +648,7 @@ h6 {
 
     .nav__menu {
         position: absolute;
-        bottom: 0;
+        bottom: 2px;
 
         z-index: -1;
 
@@ -618,9 +666,22 @@ h6 {
 
         padding: 0 0.5rem;
 
-        box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
 
         transition: 0.5s height;
+    }
+
+    .nav__menu:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .nav__item {
@@ -789,8 +850,9 @@ h6 {
 /* ---------FOOTER--------- */
 
 .footer {
-    background-color: var(--background-color, #ffffff);
-    box-shadow: var(--box-shadow, 0px 0px 10px 0px rgba(35, 60, 80, 0.2));
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .footer__content {
