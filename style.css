@@ -15,12 +15,10 @@
 }
 
 body {
-    max-width: 1200px;
-
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    background-color: var(--background-color, #ffffff);
+    margin: 0;
+    background-image: url("/img/5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img,
@@ -51,9 +49,13 @@ h6 {
 
 :root {
     font-size: 20px;
-    --background-color: #ffffff;
+
+    --background-color: rgba(255, 255, 255, 0.2);
+    --background-color-button: rgba(255, 255, 255, 0.8);
     --color-primary: #000000;
     --color-primary-hovered: #0284c7;
+    --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    --box-shadow-button: 0px 0px 7px 1px rgba(35, 60, 80, 0.2);
 }
 
 h1,
@@ -91,8 +93,31 @@ h6 {
     color: var(--color-primary-hovered, #0284c7);
 }
 
+.link:hover line {
+    stroke: var(--color-primary-hovered, #0284c7);
+}
+
 .link--thin {
     text-decoration-thickness: 1px;
+}
+
+.link-external {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.link-external__icon {
+    width: 1.5em;
+}
+
+.link-external__icon--s {
+    width: 1em;
+}
+
+.link line {
+    transition: 0.25s stroke;
 }
 
 .button {
@@ -101,16 +126,22 @@ h6 {
 
     cursor: pointer;
 
+    border-radius: 1rem;
+
     padding: 0.5rem;
 
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--background-color, #ffffff);
+    background-color: var(--background-color-button, rgba(255, 255, 255, 0.8));
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
+    box-shadow: var(--box-shadow-button, 0px 0px 7px 1px rgba(35, 60, 80, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 
-    transition: 0.25s border-color, 0.25s color;
+    transition: 0.25s color, 0.25s box-shadow;
 }
 
 .button:hover {
-    border-color: var(--color-primary-hovered, #0284c7);
+    /* box-shadow: 0px 0px 7px 3px rgba(35, 60, 80, 0.2); */
     color: var(--color-primary-hovered, #0284c7);
 }
 
@@ -126,33 +157,66 @@ h6 {
     width: 2rem;
     height: 2rem;
     padding: 0.25rem;
+    border-radius: 0.5rem;
 }
 
-.button__right-arrow {
+.button-try {
+    margin: 0 0 0.5rem 0;
+}
+
+.button-try__right-arrow {
     align-self: flex-end;
     height: 1em;
     transition: 0.5s transform;
 }
 
-.button-try--active .button__right-arrow {
+.button-try--active .button-try__right-arrow {
     transform: rotate(90deg);
+}
+
+.button-try--active + .iframe-wrapper {
+    height: 300px;
+    margin: 0.5rem 0;
+}
+
+.iframe-wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+
+    margin: 0;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+
+    transition: 0.5s height, 0.5s margin;
 }
 
 .iframe {
     width: 100%;
-    height: 0;
-
-    margin: 0.5rem 0;
-
-    border: 1px solid var(--color-primary, #000000);
-
-    transition: 0.5s height, 0.5s opacity;
-    opacity: 0;
+    height: 100%;
+    border: none;
 }
 
-.button-try--active + .iframe {
-    height: 300px;
-    opacity: 1;
+.bullet-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.bullet-list__item {
+    width: 0.6rem;
+    height: 0.3rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-primary, #000000);
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+}
+
+.bullet-list__item--active {
+    background-color: var(--color-primary, #000000);
 }
 
 /* ---------HEADER--------- */
@@ -164,16 +228,27 @@ h6 {
     right: 0;
     z-index: 9999;
 
-    background-color: var(--background-color, #ffffff);
+    padding: 0 1rem;
+
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .nav {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin: 0 1rem;
-    border-bottom: 1px solid var(--color-primary, #000000);
+    padding: 0.5rem 0;
 }
 
 .nav__menu {
@@ -183,8 +258,6 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
-    background-color: var(--background-color, #ffffff);
 }
 
 .nav__item {
@@ -199,13 +272,13 @@ h6 {
     display: inline-block;
     width: 1px;
     height: 1rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #000000);
 }
 
 .nav__item-link {
     display: inline-block;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0 0.5rem;
     text-decoration: none;
 }
 
@@ -218,11 +291,55 @@ h6 {
 /* ---Обо мне--- */
 
 .main {
-    margin-top: 3rem;
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    padding: 0 1rem;
+}
+
+.main__section {
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.main__section > section {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .main__title {
+    overflow: hidden;
+
+    position: relative;
     text-align: center;
+}
+
+.main__title:before,
+.main__title:after {
+    position: relative;
+    content: "";
+    display: inline-block;
+
+    vertical-align: middle;
+
+    width: 50%;
+    height: 1px;
+
+    background-color: var(--color-primary, #000000);
+}
+
+.main__title:before {
+    right: 1rem;
+    margin-left: -50%;
+}
+
+.main__title:after {
+    left: 1rem;
+    margin-right: -50%;
 }
 
 .skills-list {
@@ -241,7 +358,6 @@ h6 {
 }
 
 .inner-skills-list {
-    border-top: 1px solid var(--color-primary, #000000);
     position: relative;
 }
 
@@ -249,22 +365,14 @@ h6 {
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    height: 1rem;
-    background-color: var(--color-primary, #000000);
-}
 
-.inner-skills-list:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 1px solid var(--color-primary, #000000);
+    border-bottom: none;
+
+    width: 100%;
     height: 1rem;
-    background-color: var(--color-primary, #000000);
 }
 
 .skills-list__item {
@@ -289,7 +397,7 @@ h6 {
     display: inline-block;
     width: 1px;
     height: 2rem;
-    background-color: var(--color-primary);
+    background-color: var(--color-primary, #000000);
 }
 
 .inner-skills-list__item--hidden-separator:not(:last-child):after {
@@ -318,24 +426,6 @@ h6 {
 
 .skill-wrapper__header {
     margin: 0;
-}
-
-.skill-level {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.skill-level__item {
-    width: 0.6rem;
-    height: 0.3rem;
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--background-color, #ffffff);
-}
-
-.skill-level__item--enabled {
-    background-color: var(--color-primary, #000000);
 }
 
 /* ---Frontend проекты--- */
@@ -374,13 +464,13 @@ h6 {
     width: 25rem;
     height: 25rem;
     margin: 0;
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--color-primary, #000000);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
 }
 
 .my-swiper-slide {
     height: auto;
-    background-color: var(--background-color, #ffffff);
+    background-color: #ffffff;
 }
 
 .my-swiper-slide__img {
@@ -405,7 +495,7 @@ h6 {
         background-color: rgba(0, 0, 0, 0);
     }
     to {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.35);
     }
 }
 
@@ -445,6 +535,10 @@ h6 {
 .my-outer-swiper-wrapper--full-screen .my-swiper {
     width: 100%;
     height: 100%;
+}
+
+.my-outer-swiper-wrapper--full-screen .swiper__bullet-list-item:not(.bullet-list__item--active) {
+    background-color: #ffffff;
 }
 
 .body--full-screen {
@@ -524,28 +618,16 @@ h6 {
     border-right: 1px solid var(--color-primary, #000000);
 }
 
-.my-swiper-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.25rem;
+.swiper__bullet-list {
     padding: 0.5rem;
 }
 
-.my-swiper-pagination-bullet {
-    width: 0.6rem;
-    height: 0.3rem;
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--background-color, #ffffff);
+.swiper__bullet-list-item {
     transition: 0.25s background-color;
 }
 
-.my-swiper-pagination-bullet:hover {
+.swiper__bullet-list-item:hover {
     cursor: pointer;
-}
-
-.my-swiper-pagination-bullet--active {
-    background-color: var(--color-primary, #000000);
 }
 
 /* ---------ADAPTIVE--------- */
@@ -558,30 +640,48 @@ h6 {
     .nav {
         flex-direction: column;
         align-items: flex-end;
+
+        position: relative;
+
+        background-color: inherit;
     }
 
     .nav__menu {
         position: absolute;
-        bottom: -1px;
+        bottom: 2px;
 
-        z-index: 9999;
+        z-index: -1;
 
-        transform: translateY(100%) scaleY(0);
-        transform-origin: top;
+        transform: translateY(100%);
 
         flex-direction: column;
         align-items: flex-start;
+        flex-wrap: nowrap;
+
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+        height: 0;
+        overflow: hidden;
 
         padding: 0 0.5rem;
 
-        border: 1px solid var(--color-primary, #000000);
-        border-top: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
 
-        transition: 0.5s transform;
+        transition: 0.5s height;
     }
 
-    .nav__menu--opened {
-        transform: translateY(100%) scaleY(1);
+    .nav__menu:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .nav__item {
@@ -596,11 +696,16 @@ h6 {
         display: none;
     }
 
+    .nav__item-link {
+        padding: 0.5rem 0;
+    }
+
     .nav__button {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        margin: 0.5rem 0;
+        justify-content: center;
+
+        --translate-y: 11px;
     }
 
     .nav__button-line {
@@ -622,19 +727,19 @@ h6 {
         from {
         }
         50% {
-            transform: translateY(10px);
+            transform: translateY(var(--translate-y, 11px));
         }
         to {
-            transform: translateY(10px) rotate(45deg);
+            transform: translateY(var(--translate-y, 11px)) rotate(45deg);
         }
     }
 
     @keyframes nav__button--inactive-1 {
         from {
-            transform: translateY(10px) rotate(45deg);
+            transform: translateY(var(--translate-y, 11px)) rotate(45deg);
         }
         50% {
-            transform: translateY(10px);
+            transform: translateY(var(--translate-y, 11px));
         }
         to {
             transform: translateY(0);
@@ -684,19 +789,19 @@ h6 {
         from {
         }
         50% {
-            transform: translateY(-10px);
+            transform: translateY(calc(var(--translate-y, 11px) * -1));
         }
         to {
-            transform: translateY(-10px) rotate(135deg);
+            transform: translateY(calc(var(--translate-y, 11px) * -1)) rotate(135deg);
         }
     }
 
     @keyframes nav__button--inactive-3 {
         from {
-            transform: translateY(-10px) rotate(135deg);
+            transform: translateY(calc(var(--translate-y, 11px) * -1)) rotate(135deg);
         }
         50% {
-            transform: translateY(-10px);
+            transform: translateY(calc(var(--translate-y, 11px) * -1));
         }
         to {
             transform: translateY(0);
@@ -740,4 +845,18 @@ h6 {
     .my-swiper-button__arrow {
         display: none;
     }
+}
+
+/* ---------FOOTER--------- */
+
+.footer {
+    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.footer__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
 }

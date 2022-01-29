@@ -7,7 +7,7 @@ function checkLastInARow() {
 
         for (let listItem of listItems) {
             // Сравниваем по нижней части компонента (по скилл-бару), т.к. они выровнены в линию
-            const skillLevel = listItem.querySelector(".skill-level");
+            const skillLevel = listItem.querySelector(".bullet-list");
             if (!rows.has(skillLevel.offsetTop)) {
                 rows.set(skillLevel.offsetTop, []);
             }
@@ -24,78 +24,121 @@ function checkLastInARow() {
 }
 
 function onDocumentReady() {
-    const swiper = new Swiper(".my-swiper", {
-        grabCursor: true,
-        // autoplay: {},
-        // mousewheel: {},
-        spaceBetween: 1,
-        navigation: {
-            prevEl: ".my-swiper-button-prev",
-            nextEl: ".my-swiper-button-next",
-            disabledClass: "my-swiper-button--disabled",
-        },
-        pagination: {
-            el: ".my-swiper-pagination",
-            clickable: true,
-            bulletClass: "my-swiper-pagination-bullet",
-            bulletActiveClass: "my-swiper-pagination-bullet--active",
-        },
-    });
-
     checkLastInARow();
     window.addEventListener("resize", checkLastInARow);
 
-    document.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
-        const body = document.querySelector("body");
-        const outerSwiperWrapper = document.querySelector(".my-outer-swiper-wrapper");
+    // Сбрасываем стили для верхнего меню при ресайзе
+    const mediaQuery = window.matchMedia("(max-width: 770px)");
+    mediaQuery.addEventListener("change", () => {
+        if (!mediaQuery.matches) {
+            const navMenu = document.querySelector(".nav__menu");
+            navMenu.style.height = "";
+            navMenu.classList.remove("nav__menu--opened");
+        }
+    });
 
-        const replacer = body.appendChild(outerSwiperWrapper.cloneNode(true));
-
-        const swiper = new Swiper(replacer.querySelector(".my-swiper"), {
-            initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
+    document.querySelectorAll(".my-outer-swiper-wrapper").forEach((swiperWrapper) => {
+        new Swiper(swiperWrapper.querySelector(".my-swiper"), {
             grabCursor: true,
-            // autoplay: {},
-            // mousewheel: {},
             spaceBetween: 1,
             navigation: {
-                prevEl: replacer.querySelector(".my-swiper-button-prev"),
-                nextEl: replacer.querySelector(".my-swiper-button-next"),
+                prevEl: swiperWrapper.querySelector(".my-swiper-button-prev"),
+                nextEl: swiperWrapper.querySelector(".my-swiper-button-next"),
                 disabledClass: "my-swiper-button--disabled",
             },
             pagination: {
-                el: replacer.querySelector(".my-swiper-pagination"),
+                el: swiperWrapper.querySelector(".swiper__bullet-list"),
                 clickable: true,
-                bulletClass: "my-swiper-pagination-bullet",
-                bulletActiveClass: "my-swiper-pagination-bullet--active",
+                bulletClass: "bullet-list__item swiper__bullet-list-item",
+                bulletActiveClass: "bullet-list__item--active",
             },
         });
+    });
 
-        body.classList.add("body--full-screen");
-        replacer.classList.add("my-outer-swiper-wrapper--full-screen");
+    document.querySelectorAll(".my-inner-swiper-wrapper__expand-swiper-button").forEach((button) => {
+        button.addEventListener("click", () => {
+            const body = document.querySelector("body");
+            const outerSwiperWrapper = button.closest(".my-outer-swiper-wrapper");
 
-        replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
-            body.classList.remove("body--full-screen");
+            const replacer = body.appendChild(outerSwiperWrapper.cloneNode(true));
 
-            // Необходимо для работы обратной анимации модалки
-            replacer.classList.remove("my-outer-swiper-wrapper--full-screen");
-            requestAnimationFrame(() => {
-                replacer.classList.add("my-outer-swiper-wrapper--full-screen");
-                replacer.style.animationDirection = "reverse";
-                replacer.querySelector(".my-middle-swiper-wrapper").style.animationDirection = "reverse";
+            const swiper = new Swiper(replacer.querySelector(".my-swiper"), {
+                initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
+                grabCursor: true,
+                spaceBetween: 1,
+                navigation: {
+                    prevEl: replacer.querySelector(".my-swiper-button-prev"),
+                    nextEl: replacer.querySelector(".my-swiper-button-next"),
+                    disabledClass: "my-swiper-button--disabled",
+                },
+                pagination: {
+                    el: replacer.querySelector(".swiper__bullet-list"),
+                    clickable: true,
+                    bulletClass: "bullet-list__item swiper__bullet-list-item",
+                    bulletActiveClass: "bullet-list__item--active",
+                },
             });
 
-            setTimeout(() => {
-                body.removeChild(replacer);
-            }, 500);
+            body.classList.add("body--full-screen");
+            replacer.classList.add("my-outer-swiper-wrapper--full-screen");
+
+            replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+                body.classList.remove("body--full-screen");
+
+                // Необходимо для работы обратной анимации модалки
+                replacer.classList.remove("my-outer-swiper-wrapper--full-screen");
+                requestAnimationFrame(() => {
+                    replacer.classList.add("my-outer-swiper-wrapper--full-screen");
+                    replacer.style.animationDirection = "reverse";
+                    replacer.querySelector(".my-middle-swiper-wrapper").style.animationDirection = "reverse";
+                });
+
+                setTimeout(() => {
+                    swiper.destroy();
+                    body.removeChild(replacer);
+                }, 500);
+            });
         });
     });
 
     document.querySelector(".nav__button").addEventListener("click", () => {
-        document.querySelector(".nav__menu").classList.toggle("nav__menu--opened");
+        const navMenu = document.querySelector(".nav__menu");
+        navMenu.classList.toggle("nav__menu--opened");
+
+        if (navMenu.classList.contains("nav__menu--opened")) {
+            navMenu.style.height = "auto";
+            const fullHeight = getComputedStyle(navMenu).height;
+            navMenu.style.height = "0px";
+
+            requestAnimationFrame(() => {
+                navMenu.style.height = fullHeight;
+            });
+        } else {
+            navMenu.style.height = "0px";
+        }
     });
 
-    document.querySelector(".button-try").addEventListener("click", () => {
-        document.querySelector(".button-try").classList.toggle("button-try--active");
+    document.querySelectorAll(".button-try").forEach((button) => {
+        button.addEventListener("click", () => {
+            button.classList.toggle("button-try--active");
+        });
+    });
+
+    document.querySelectorAll(".nav__item-link").forEach((navLink) => {
+        navLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = navLink.href.split("#")[1];
+            if (id) {
+                const navMenu = document.querySelector(".nav__menu");
+                navMenu.classList.remove("nav__menu--opened");
+                navMenu.style.height = "";
+
+                const distanceToAnchor = document.querySelector(`#${id}`).getBoundingClientRect().top + window.scrollY;
+                const mainOffset = document.querySelector(".main").offsetTop;
+                const y = distanceToAnchor - mainOffset;
+                window.scrollTo({ top: y, behavior: "smooth" });
+            }
+        });
     });
 }
 
