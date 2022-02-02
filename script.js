@@ -73,8 +73,10 @@ function onDocumentReady() {
 
             const replacer = body.appendChild(outerSwiperWrapper.cloneNode(true));
 
-            const swiper = new Swiper(replacer.querySelector(".my-swiper"), {
-                initialSlide: outerSwiperWrapper.querySelector(".my-swiper").swiper.activeIndex,
+            const oldSwiper = outerSwiperWrapper.querySelector(".my-swiper").swiper;
+
+            const newSwiper = new Swiper(replacer.querySelector(".my-swiper"), {
+                initialSlide: oldSwiper.activeIndex,
                 grabCursor: true,
                 spaceBetween: 1,
                 navigation: {
@@ -94,6 +96,8 @@ function onDocumentReady() {
             replacer.classList.add("my-outer-swiper-wrapper--full-screen");
 
             replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+                oldSwiper.slideTo(newSwiper.activeIndex, 0);
+
                 body.classList.remove("body--full-screen");
 
                 // Необходимо для работы обратной анимации модалки
@@ -105,7 +109,7 @@ function onDocumentReady() {
                 });
 
                 setTimeout(() => {
-                    swiper.destroy();
+                    newSwiper.destroy();
                     body.removeChild(replacer);
                 }, 500);
             });
