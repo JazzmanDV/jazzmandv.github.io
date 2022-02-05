@@ -99,15 +99,7 @@ function onDocumentReady() {
                 oldSwiper.slideTo(newSwiper.activeIndex, 0);
 
                 body.classList.remove("body--full-screen");
-
-                // Необходимо для работы обратной анимации модалки
-                replacer.classList.remove("my-outer-swiper-wrapper--full-screen");
-                requestAnimationFrame(() => {
-                    replacer.classList.add("my-outer-swiper-wrapper--full-screen");
-                    replacer.style.animationDirection = "reverse";
-                    replacer.querySelector(".my-middle-swiper-wrapper").style.animationDirection = "reverse";
-                });
-
+                replacer.classList.add("my-outer-swiper-wrapper--full-screen-out");
                 setTimeout(() => {
                     newSwiper.destroy();
                     body.removeChild(replacer);

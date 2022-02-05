@@ -514,6 +514,19 @@ h6 {
     animation: 0.5s outer-swiper--full-screen both;
 }
 
+@keyframes outer-swiper--full-screen-out {
+    from {
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen-out {
+    animation: 0.5s outer-swiper--full-screen-out both;
+}
+
 @keyframes middle-swiper--full-screen {
     from {
         opacity: 0;
@@ -537,6 +550,20 @@ h6 {
     right: calc((100vw - var(--full-screen-width)) / 2);
 
     animation: 0.5s middle-swiper--full-screen both;
+}
+
+@keyframes middle-swiper--full-screen-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen-out .my-middle-swiper-wrapper {
+    animation: 0.5s middle-swiper--full-screen-out both;
 }
 
 .my-outer-swiper-wrapper--full-screen .my-swiper {
