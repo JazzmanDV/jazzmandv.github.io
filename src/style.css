@@ -16,7 +16,7 @@
 
 body {
     margin: 0;
-    background-image: url("/img/5.jpg");
+    background-image: url("./img/5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -81,20 +81,20 @@ h6 {
 }
 
 .link {
-    color: var(--color-primary, #000000);
+    color: var(--color-primary);
     transition: 0.25s color;
 }
 
 .link:visited {
-    color: var(--color-primary, #000000);
+    color: var(--color-primary);
 }
 
 .link:hover {
-    color: var(--color-primary-hovered, #0284c7);
+    color: var(--color-primary-hovered);
 }
 
 .link:hover line {
-    stroke: var(--color-primary-hovered, #0284c7);
+    stroke: var(--color-primary-hovered);
 }
 
 .link--thin {
@@ -130,9 +130,9 @@ h6 {
 
     padding: 0.5rem;
 
-    background-color: var(--background-color-button, rgba(255, 255, 255, 0.8));
+    background-color: var(--background-color-button);
     /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
-    box-shadow: var(--box-shadow-button, 0px 0px 7px 1px rgba(35, 60, 80, 0.2));
+    box-shadow: var(--box-shadow-button);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -142,7 +142,7 @@ h6 {
 
 .button:hover {
     /* box-shadow: 0px 0px 7px 3px rgba(35, 60, 80, 0.2); */
-    color: var(--color-primary-hovered, #0284c7);
+    color: var(--color-primary-hovered);
 }
 
 .button line {
@@ -150,7 +150,7 @@ h6 {
 }
 
 .button:hover line {
-    stroke: var(--color-primary-hovered, #0284c7);
+    stroke: var(--color-primary-hovered);
 }
 
 .button-square {
@@ -188,8 +188,8 @@ h6 {
 
     border-radius: 0.5rem;
 
-    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
-    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
 
     transition: 0.5s height, 0.5s margin;
 }
@@ -211,12 +211,12 @@ h6 {
     width: 0.6rem;
     height: 0.3rem;
     border-radius: 0.5rem;
-    border: 1px solid var(--color-primary, #000000);
-    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
+    border: 1px solid var(--color-primary);
+    background-color: var(--background-color);
 }
 
 .bullet-list__item--active {
-    background-color: var(--color-primary, #000000);
+    background-color: var(--color-primary);
 }
 
 /* ---------HEADER--------- */
@@ -230,8 +230,8 @@ h6 {
 
     padding: 0 1rem;
 
-    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
-    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -241,7 +241,6 @@ h6 {
     inset: 0;
 
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .nav {
@@ -272,7 +271,7 @@ h6 {
     display: inline-block;
     width: 1px;
     height: 1rem;
-    background-color: var(--color-primary, #000000);
+    background-color: var(--color-primary);
 }
 
 .nav__item-link {
@@ -304,8 +303,8 @@ h6 {
 .main__section > section {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
-    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -329,7 +328,7 @@ h6 {
     width: 50%;
     height: 1px;
 
-    background-color: var(--color-primary, #000000);
+    background-color: var(--color-primary);
 }
 
 .main__title:before {
@@ -368,7 +367,7 @@ h6 {
 
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    border: 1px solid var(--color-primary, #000000);
+    border: 1px solid var(--color-primary);
     border-bottom: none;
 
     width: 100%;
@@ -397,7 +396,7 @@ h6 {
     display: inline-block;
     width: 1px;
     height: 2rem;
-    background-color: var(--color-primary, #000000);
+    background-color: var(--color-primary);
 }
 
 .inner-skills-list__item--hidden-separator:not(:last-child):after {
@@ -417,7 +416,7 @@ h6 {
     display: block;
     width: 1px;
     height: 1rem;
-    background-color: var(--color-primary, #000000);
+    background-color: var(--color-primary);
 }
 
 .inner-skill-wrapper {
@@ -465,7 +464,7 @@ h6 {
     height: 25rem;
     margin: 0;
     border-radius: 0.5rem;
-    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    box-shadow: var(--box-shadow);
 }
 
 .my-swiper-slide {
@@ -524,10 +523,10 @@ h6 {
     --full-screen-width: 90vw;
     --full-screen-height: 90vh;
 
-    top: calc((100vh - var(--full-screen-height, 90vh)) / 2);
-    bottom: calc((100vh - var(--full-screen-height, 90vh)) / 2);
-    left: calc((100vw - var(--full-screen-width, 90vw)) / 2);
-    right: calc((100vw - var(--full-screen-width, 90vw)) / 2);
+    top: calc((100vh - var(--full-screen-height)) / 2);
+    bottom: calc((100vh - var(--full-screen-height)) / 2);
+    left: calc((100vw - var(--full-screen-width)) / 2);
+    right: calc((100vw - var(--full-screen-width)) / 2);
 
     animation: 0.5s middle-swiper--full-screen both;
 }
@@ -574,30 +573,30 @@ h6 {
 }
 
 .my-swiper-button__arrow {
-    border-top: 1px solid var(--color-primary, #000000);
+    border-top: 1px solid var(--color-primary);
     width: 1.5rem;
     height: 1.5rem;
     transition: 0.25s;
 }
 
 .my-swiper-button__prev-arrow {
-    border-left: 1px solid var(--color-primary, #000000);
+    border-left: 1px solid var(--color-primary);
     transform: rotate(-45deg);
 }
 
 .my-swiper-button:hover .my-swiper-button__prev-arrow {
-    border-top: 1px solid var(--color-primary-hovered, #0284c7);
-    border-left: 1px solid var(--color-primary-hovered, #0284c7);
+    border-top: 1px solid var(--color-primary-hovered);
+    border-left: 1px solid var(--color-primary-hovered);
 }
 
 .my-swiper-button__next-arrow {
-    border-right: 1px solid var(--color-primary, #000000);
+    border-right: 1px solid var(--color-primary);
     transform: rotate(45deg);
 }
 
 .my-swiper-button:hover .my-swiper-button__next-arrow {
-    border-top: 1px solid var(--color-primary-hovered, #0284c7);
-    border-right: 1px solid var(--color-primary-hovered, #0284c7);
+    border-top: 1px solid var(--color-primary-hovered);
+    border-right: 1px solid var(--color-primary-hovered);
 }
 
 .my-swiper-button--disabled {
@@ -609,13 +608,13 @@ h6 {
 }
 
 .my-swiper-button--disabled:hover .my-swiper-button__prev-arrow {
-    border-top: 1px solid var(--color-primary, #000000);
-    border-left: 1px solid var(--color-primary, #000000);
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
 }
 
 .my-swiper-button--disabled:hover .my-swiper-button__next-arrow {
-    border-top: 1px solid var(--color-primary, #000000);
-    border-right: 1px solid var(--color-primary, #000000);
+    border-top: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
 }
 
 .swiper__bullet-list {
@@ -667,7 +666,7 @@ h6 {
         padding: 0 0.5rem;
 
         background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+        box-shadow: var(--box-shadow);
         border: 1px solid rgba(255, 255, 255, 0.25);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         border-left: 1px solid rgba(255, 255, 255, 0.5);
@@ -681,7 +680,6 @@ h6 {
         inset: 0;
 
         backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
     }
 
     .nav__item {
@@ -689,7 +687,7 @@ h6 {
     }
 
     .nav__item:not(:last-child) {
-        border-bottom: 1px solid var(--color-primary, #000000);
+        border-bottom: 1px solid var(--color-primary);
     }
 
     .nav__item:not(:last-child):after {
@@ -713,33 +711,33 @@ h6 {
     }
 
     .nav__button:hover .nav__button-line {
-        background-color: var(--color-primary-hovered, #0284c7);
+        background-color: var(--color-primary-hovered);
     }
 
     .nav__button-line {
         width: 100%;
         height: 1px;
         transform-origin: center;
-        background-color: var(--color-primary, #0284c7);
+        background-color: var(--color-primary);
     }
 
     @keyframes nav__button--active-1 {
         from {
         }
         50% {
-            transform: translateY(var(--translate-y, 11px));
+            transform: translateY(var(--translate-y));
         }
         to {
-            transform: translateY(var(--translate-y, 11px)) rotate(45deg);
+            transform: translateY(var(--translate-y)) rotate(45deg);
         }
     }
 
     @keyframes nav__button--inactive-1 {
         from {
-            transform: translateY(var(--translate-y, 11px)) rotate(45deg);
+            transform: translateY(var(--translate-y)) rotate(45deg);
         }
         50% {
-            transform: translateY(var(--translate-y, 11px));
+            transform: translateY(var(--translate-y));
         }
         to {
             transform: translateY(0);
@@ -789,19 +787,19 @@ h6 {
         from {
         }
         50% {
-            transform: translateY(calc(var(--translate-y, 11px) * -1));
+            transform: translateY(calc(var(--translate-y) * -1));
         }
         to {
-            transform: translateY(calc(var(--translate-y, 11px) * -1)) rotate(135deg);
+            transform: translateY(calc(var(--translate-y) * -1)) rotate(135deg);
         }
     }
 
     @keyframes nav__button--inactive-3 {
         from {
-            transform: translateY(calc(var(--translate-y, 11px) * -1)) rotate(135deg);
+            transform: translateY(calc(var(--translate-y) * -1)) rotate(135deg);
         }
         50% {
-            transform: translateY(calc(var(--translate-y, 11px) * -1));
+            transform: translateY(calc(var(--translate-y) * -1));
         }
         to {
             transform: translateY(0);
@@ -850,8 +848,8 @@ h6 {
 /* ---------FOOTER--------- */
 
 .footer {
-    background-color: var(--background-color, rgba(255, 255, 255, 0.2));
-    box-shadow: var(--box-shadow, 0 15px 35px rgba(0, 0, 0, 0.05));
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
