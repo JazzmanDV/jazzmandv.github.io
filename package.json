@@ -1,0 +1,14 @@
+{
+    "name": "resume-website",
+    "source": "src/index.html",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+        "start": "parcel",
+        "build": "parcel build --dist-dir ./build"
+    },
+    "devDependencies": {
+        "parcel": "^2.2.1",
+        "postcss": "^8.4.6",
+        "postcss-preset-env": "^7.3.1"
+    }
+}
