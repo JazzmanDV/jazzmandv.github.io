@@ -1,14 +1,20 @@
 {
     "name": "resume-website",
     "source": "src/index.html",
-    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "browserslist": "cover 99.5%",
     "scripts": {
         "start": "parcel",
-        "build": "parcel build --dist-dir ./build"
+        "build": "parcel build"
     },
     "devDependencies": {
         "parcel": "^2.2.1",
         "postcss": "^8.4.6",
         "postcss-preset-env": "^7.3.1"
+    },
+    "targets": {
+        "default": {
+            "publicUrl": "./",
+            "distDir": "./build"
+        }
     }
 }
