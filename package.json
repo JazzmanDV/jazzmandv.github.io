@@ -16,5 +16,8 @@
             "publicUrl": "./",
             "distDir": "./build"
         }
+    },
+    "dependencies": {
+        "swiper": "^8.0.6"
     }
 }
