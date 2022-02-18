@@ -1,11 +1,11 @@
 /* ---------SETUP--------- */
-@import "/src/setup.css";
+@import "/src/css/setup.css";
 
 /* ---------UTILS--------- */
-@import "/src/utils.css";
+@import "/src/css/utils.css";
 
 /* ---------COMMON--------- */
-@import "/src/common.css";
+@import "/src/css/common.css";
 
 /* ---------HEADER--------- */
 @import "/src/components/header/header.css";
@@ -17,4 +17,4 @@
 @import "/src/components/footer/footer.css";
 
 /* ---------ADAPTIVE--------- */
-@import "/src/adaptive.css";
+@import "/src/css/adaptive.css";
