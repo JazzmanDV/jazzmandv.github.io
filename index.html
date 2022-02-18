@@ -1,26 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-    {% include "./src/components/head.html" %}
-</head>
+{% include "./src/components/head.html" %}
 
 <body>
-    <header class="header">
-        <nav class="nav">
-            <ul class="nav__menu">
-                <li class="nav__item"><a class="link nav__item-link" href="#about-me" tabindex="2">Обо мне</a></li>
-                <li class="nav__item"><a class="link nav__item-link" href="#frontend-projects">Frontend проекты</a></li>
-                <li class="nav__item"><a class="link nav__item-link" href="#">Проекты на других языках</a></li>
-                <li class="nav__item"><a class="link nav__item-link" href="#">Контакты</a></li>
-            </ul>
-            <button class="button button-square nav__button" tabindex="1">
-                <div class="nav__button-line"></div>
-                <div class="nav__button-line"></div>
-                <div class="nav__button-line"></div>
-            </button>
-        </nav>
-    </header>
+    {% include "./src/components/header/header.html" %}
 
     <main class="main">
         <section class="main__section" id="about-me">
