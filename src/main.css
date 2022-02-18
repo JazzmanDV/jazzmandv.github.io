@@ -3,6 +3,7 @@
 
 /* ---------COMMON--------- */
 @import "/src/components/link/link.css";
+@import "/src/components//button/button.css";
 
 /* ---------HEADER--------- */
 @import "/src/components/header/header.css";
