@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import legacy from "@vitejs/plugin-legacy";
 
+import nunjucks from "vite-plugin-nunjucks";
+
 import postcssPresetEnv from "postcss-preset-env";
 
 export default defineConfig({
@@ -8,6 +10,7 @@ export default defineConfig({
         legacy({
             additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
         }),
+        nunjucks(),
     ],
     base: "./",
     build: {
