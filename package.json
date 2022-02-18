@@ -1,21 +1,16 @@
 {
     "name": "resume-website",
-    "source": "src/index.html",
     "browserslist": "cover 99.5%",
     "scripts": {
-        "start": "parcel",
-        "build": "parcel build"
+        "start": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "devDependencies": {
-        "parcel": "^2.2.1",
+        "vite": "^2.8.4",
+        "@vitejs/plugin-legacy": "^1.7.1",
         "postcss": "^8.4.6",
         "postcss-preset-env": "^7.3.1"
-    },
-    "targets": {
-        "default": {
-            "publicUrl": "./",
-            "distDir": "./build"
-        }
     },
     "dependencies": {
         "swiper": "^8.0.6"
