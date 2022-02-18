@@ -74,46 +74,6 @@ h6 {
     font-weight: 500;
 }
 
-.link {
-    color: var(--color-primary);
-    transition: 0.25s color;
-}
-
-.link:visited {
-    color: var(--color-primary);
-}
-
-.link:hover {
-    color: var(--color-primary-hovered);
-}
-
-.link:hover line {
-    stroke: var(--color-primary-hovered);
-}
-
-.link--thin {
-    text-decoration-thickness: 1px;
-}
-
-.link-external {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.link-external__icon {
-    width: 1.5em;
-}
-
-.link-external__icon--s {
-    width: 1em;
-}
-
-.link line {
-    transition: 0.25s stroke;
-}
-
 .button {
     display: flex;
     gap: 0.5rem;
