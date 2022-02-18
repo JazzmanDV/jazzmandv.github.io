@@ -1,5 +1,5 @@
-import Swiper from "swiper/bundle";
-import "swiper/css/bundle";
+import "/src/swiper/swiper.js";
+import "/src/swiper/swiper.css";
 
 function checkLastInARow() {
     const lists = document.querySelectorAll(".inner-skills-list");
