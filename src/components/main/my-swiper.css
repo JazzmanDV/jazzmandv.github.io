@@ -1,0 +1,196 @@
+.my-swiper {
+    width: 25rem;
+    height: 25rem;
+    margin: 0;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.my-swiper-slide {
+    height: auto;
+    background-color: #ffffff;
+}
+
+.my-swiper-slide__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.my-outer-swiper-wrapper {
+    transition: 0.5s background-color;
+}
+
+.my-middle-swiper-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes outer-swiper--full-screen {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen {
+    z-index: 9999;
+    position: fixed;
+    inset: 0;
+
+    animation: 0.5s outer-swiper--full-screen both;
+}
+
+@keyframes outer-swiper--full-screen-out {
+    from {
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen-out {
+    animation: 0.5s outer-swiper--full-screen-out both;
+}
+
+@keyframes middle-swiper--full-screen {
+    from {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen .my-middle-swiper-wrapper {
+    position: fixed;
+    z-index: 9999;
+
+    --full-screen-width: 90vw;
+    --full-screen-height: 90vh;
+
+    top: calc((100vh - var(--full-screen-height)) / 2);
+    bottom: calc((100vh - var(--full-screen-height)) / 2);
+    left: calc((100vw - var(--full-screen-width)) / 2);
+    right: calc((100vw - var(--full-screen-width)) / 2);
+
+    animation: 0.5s middle-swiper--full-screen both;
+}
+
+@keyframes middle-swiper--full-screen-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(50vh);
+    }
+}
+
+.my-outer-swiper-wrapper--full-screen-out .my-middle-swiper-wrapper {
+    animation: 0.5s middle-swiper--full-screen-out both;
+}
+
+.my-outer-swiper-wrapper--full-screen .my-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.my-outer-swiper-wrapper--full-screen .swiper__bullet-list-item:not(.bullet-list__item--active) {
+    background-color: #ffffff;
+}
+
+.body--full-screen {
+    overflow: hidden;
+}
+
+.my-inner-swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.my-inner-swiper-wrapper__expand-swiper-button {
+    position: absolute;
+
+    top: 0rem;
+    right: 0rem;
+
+    transform: translateX(2.5rem);
+}
+
+.my-swiper-button {
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.my-swiper-button-prev {
+    padding-right: 0;
+}
+
+.my-swiper-button-next {
+    padding-left: 0;
+}
+
+.my-swiper-button__arrow {
+    border-top: 1px solid var(--color-primary);
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 0.25s;
+}
+
+.my-swiper-button__prev-arrow {
+    border-left: 1px solid var(--color-primary);
+    transform: rotate(-45deg);
+}
+
+.my-swiper-button:hover .my-swiper-button__prev-arrow {
+    border-top: 1px solid var(--color-primary-hovered);
+    border-left: 1px solid var(--color-primary-hovered);
+}
+
+.my-swiper-button__next-arrow {
+    border-right: 1px solid var(--color-primary);
+    transform: rotate(45deg);
+}
+
+.my-swiper-button:hover .my-swiper-button__next-arrow {
+    border-top: 1px solid var(--color-primary-hovered);
+    border-right: 1px solid var(--color-primary-hovered);
+}
+
+.my-swiper-button--disabled {
+    cursor: auto;
+}
+
+.my-swiper-button--disabled .my-swiper-button__arrow {
+    opacity: 0.3;
+}
+
+.my-swiper-button--disabled:hover .my-swiper-button__prev-arrow {
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary);
+}
+
+.my-swiper-button--disabled:hover .my-swiper-button__next-arrow {
+    border-top: 1px solid var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+}
+
+.swiper__bullet-list {
+    padding: 0.5rem;
+}
+
+.swiper__bullet-list-item {
+    transition: 0.25s background-color;
+}
+
+.swiper__bullet-list-item:hover {
+    cursor: pointer;
+}
