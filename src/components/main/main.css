@@ -1,5 +1,5 @@
 /* ---my-swiper--- */
-@import "./my-swiper.css";
+@import "/src/components/common/my-swiper/my-swiper.css";
 
 /* ---Обо мне--- */
 @import "./about-me/about-me.css";
