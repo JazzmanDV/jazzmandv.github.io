@@ -200,6 +200,10 @@
     .my-inner-swiper-wrapper__expand-swiper-button {
         display: none;
     }
+
+    .main__section > section {
+        padding: 1rem 1rem;
+    }
 }
 
 @media (max-width: 700px) {
@@ -209,5 +213,9 @@
 
     .my-swiper-button__arrow {
         display: none;
+    }
+
+    .main {
+        padding: 0 0.5rem;
     }
 }

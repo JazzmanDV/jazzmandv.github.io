@@ -22,8 +22,8 @@ export default function prepareNav() {
             const id = navLink.href.split("#")[1];
             if (id) {
                 const navMenu = document.querySelector(".nav__menu");
-                navMenu.classList.remove("nav__menu--opened");
                 navMenu.style.height = "";
+                navMenu.classList.remove("nav__menu--opened");
 
                 const distanceToAnchor = document.querySelector(`#${id}`).getBoundingClientRect().top + window.scrollY;
                 const mainOffset = document.querySelector(".main").offsetTop;
