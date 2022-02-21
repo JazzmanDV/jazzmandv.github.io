@@ -5,15 +5,13 @@
   {% for project in projects.projectsArray %}
   <section>
     <h3>{{project.name}}</h3>
-    {% if project.swiperAssets %}
     <div class="project-section">
-      {% endif %}
       <div>
         <h4>Технологии:</h4>
         <ul class="tech-list">
           {% for tech in project.techs %}
           <li class="tech-list__item">
-            <div class="tech-wrapper">
+            <div class="tech-list__item-wrapper">
               <img src="/src/img/icons/techs/{{tech.imageName}}" alt="{{tech.name}}" class="tech-icon" />
               {{tech.name}}
             </div>
@@ -62,9 +60,7 @@
         </div>
       </div>
       {% endif %}
-      {% if project.swiperAssets %}
     </div>
-    {% endif %}
     {% if project.buttonTryIframeLink %}
     <button class="button button-try">
       <span> Опробовать </span>
