@@ -1,0 +1,14 @@
+{% macro iframeMacro(iframeLink) %}
+<button class="button button-try">
+    <span> Опробовать </span>
+    <svg fill="#000000" viewBox="0 0 50 100" xmlns="http://www.w3.org/2000/svg" class="button-try__right-arrow">
+        <line x1="0" y1="0" x2="50" y2="50" stroke="currentColor" stroke-width="1px"
+            vector-effect="non-scaling-stroke" />
+        <line x1="0" y1="100" x2="50" y2="50" stroke="currentColor" stroke-width="1px"
+            vector-effect="non-scaling-stroke" />
+    </svg>
+</button>
+<div class="iframe-wrapper">
+    <iframe class="iframe" src="{{iframeLink}}"></iframe>
+</div>
+{% endmacro %}

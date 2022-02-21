@@ -1,0 +1,39 @@
+{% macro swiperMacro(assetsDirName, swiperAssetsDirName, swiperAssets) %}
+<div class="my-outer-swiper-wrapper">
+    <div class="my-middle-swiper-wrapper">
+        <div class="my-swiper-button my-swiper-button-prev">
+            <div class="my-swiper-button__arrow my-swiper-button__prev-arrow"></div>
+        </div>
+        <div class="my-inner-swiper-wrapper">
+            <button class="button button-square my-inner-swiper-wrapper__expand-swiper-button">
+                <svg fill="#000000" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="100" x2="100" y2="0" stroke="currentColor" stroke-width="1px"
+                        vector-effect="non-scaling-stroke" />
+                    <line x1="0" y1="50" x2="0" y2="100" stroke="currentColor" stroke-width="2px"
+                        vector-effect="non-scaling-stroke" />
+                    <line x1="0" y1="100" x2="50" y2="100" stroke="currentColor" stroke-width="2px"
+                        vector-effect="non-scaling-stroke" />
+                    <line x1="50" y1="0" x2="100" y2="0" stroke="currentColor" stroke-width="2px"
+                        vector-effect="non-scaling-stroke" />
+                    <line x1="100" y1="0" x2="100" y2="50" stroke="currentColor" stroke-width="2px"
+                        vector-effect="non-scaling-stroke" />
+                </svg>
+            </button>
+            <div class="swiper my-swiper">
+                <div class="swiper-wrapper">
+                    {% for swiperAssetName in swiperAssets %}
+                    <div class="swiper-slide my-swiper-slide">
+                        <img src="/src/img/projects/{{assetsDirName}}/{{swiperAssetsDirName}}/{{swiperAssetName}}"
+                            class="my-swiper-slide__img" />
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="bullet-list swiper__bullet-list"></div>
+        </div>
+        <div class="my-swiper-button my-swiper-button-next">
+            <div class="my-swiper-button__arrow my-swiper-button__next-arrow"></div>
+        </div>
+    </div>
+</div>
+{% endmacro %}
