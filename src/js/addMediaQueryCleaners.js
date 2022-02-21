@@ -1,11 +1,11 @@
+import closeNavMenu from "./utils/closeNavMenu.js";
+
 export default function addMediaQueryCleaners() {
     // Сбрасываем стили для верхнего меню при увеличении ширины экрана
     const mediaQueryMaxWidth770 = window.matchMedia("(max-width: 770px)");
     mediaQueryMaxWidth770.addEventListener("change", () => {
         if (!mediaQueryMaxWidth770.matches) {
-            const navMenu = document.querySelector(".nav__menu");
-            navMenu.style.height = "";
-            navMenu.classList.remove("nav__menu--opened");
+            closeNavMenu();
         }
     });
 

@@ -3,7 +3,7 @@
   <h2 class="main__title">{{projects.header}}</h2>
 
   {% for project in projects.projectsArray %}
-  <section>
+  <section {% if project.id %} id="{{project.id}}" {% endif %}>
     <h3>{{project.name}}</h3>
     <div class="project-section">
       <div>

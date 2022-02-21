@@ -38,6 +38,7 @@ const projects = {
                 githubLink: "https://github.com/JazzmanDV/jazzmandv.github.io",
             },
             {
+                id: "todo-app",
                 name: `SPA "Список дел"`,
                 swiperAssetsDirName: "todo-app",
                 techs: [
@@ -72,6 +73,7 @@ const projects = {
                 githubLink: "https://github.com/JazzmanDV/todo-app",
             },
             {
+                id: "store-app",
                 name: `SPA "Интернет-магазин"`,
                 swiperAssetsDirName: "store-app",
                 techs: [
@@ -113,6 +115,7 @@ const projects = {
         assetsDirName: "fullstack",
         projectsArray: [
             {
+                id: "service-center",
                 name: "Информационная система для компьютерного сервисного центра",
                 swiperAssetsDirName: "service-center",
                 techs: [
