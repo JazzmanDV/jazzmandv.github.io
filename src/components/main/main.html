@@ -1,5 +1,8 @@
+{% from "./macros/specificProjectsMacro.html" import specificProjectsMacro %}
+
 <main class="main">
     {% include "./about-me/about-me.html" %}
-    {% include "./frontend-projects/frontend-projects.html" %}
-    {% include "./fullstack-projects/fullstack-projects.html" %}
+
+    {{ specificProjectsMacro(projects.frontend) }}
+    {{ specificProjectsMacro(projects.fullstack) }}
 </main>
