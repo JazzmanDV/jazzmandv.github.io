@@ -88,3 +88,9 @@
     display: flex;
     gap: 0.5rem;
 }
+
+.project-section__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

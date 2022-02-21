@@ -6,19 +6,24 @@
   <section {% if project.id %} id="{{project.id}}" {% endif %}>
     <h3>{{project.name}}</h3>
     <div class="project-section">
-      <div>
-        <h4>Технологии:</h4>
-        <ul class="tech-list">
-          {% for tech in project.techs %}
-          <li class="tech-list__item">
-            <div class="tech-list__item-wrapper">
-              <img src="/src/img/icons/techs/{{tech.imageName}}" alt="{{tech.name}}" class="tech-icon" />
-              {{tech.name}}
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-        <p>{{project.description | safe}}</p>
+      <div class="project-section__description">
+        <div class="project-section__description-section">
+          <h4>Технологии:</h4>
+          <ul class="tech-list">
+            {% for tech in project.techs %}
+            <li class="tech-list__item">
+              <div class="tech-list__item-wrapper">
+                <img src="/src/img/icons/techs/{{tech.imageName}}" alt="{{tech.name}}" class="tech-icon" />
+                {{tech.name}}
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="project-section__description-section">
+          <h4>Краткое описание:</h4>
+          <p>{{project.description | safe}}</p>
+        </div>
       </div>
       {% if project.swiperAssets %}
       <div class="my-outer-swiper-wrapper">
