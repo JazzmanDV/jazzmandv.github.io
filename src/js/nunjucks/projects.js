@@ -108,6 +108,7 @@ const projects = {
         ],
     },
     fullstack: {
+        id: "fullstack",
         header: "Full-Stack проекты",
         assetsDirName: "fullstack",
         projectsArray: [
