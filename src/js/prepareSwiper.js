@@ -46,7 +46,7 @@ export default function prepareSwiper() {
             body.classList.add("body--full-screen");
             replacer.classList.add("my-outer-swiper-wrapper--full-screen");
 
-            replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+            function minimize() {
                 oldSwiper.slideTo(newSwiper.activeIndex, 0);
 
                 body.classList.remove("body--full-screen");
@@ -55,6 +55,17 @@ export default function prepareSwiper() {
                     newSwiper.destroy();
                     body.removeChild(replacer);
                 }, 500);
+            }
+
+            replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
+                minimize();
+            });
+
+            const backgroundLayer = replacer.closest(".my-outer-swiper-wrapper");
+            backgroundLayer.addEventListener("click", (e) => {
+                if (e.target === backgroundLayer) {
+                    minimize();
+                }
             });
         });
     });

@@ -1,5 +1,8 @@
 /* ---------------GENERAL SETUP--------------- */
 
+/* ---------SwiperJS--------- */
+@import "/src/swiper/swiper.css";
+
 /* ---------SETUP--------- */
 @import "/src/css/setup.css";
 
