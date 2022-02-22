@@ -110,7 +110,7 @@ const projects = {
         ],
     },
     fullstack: {
-        id: "fullstack",
+        id: "fullstack-projects",
         header: "Full-Stack проекты",
         assetsDirName: "fullstack",
         projectsArray: [
@@ -146,6 +146,27 @@ const projects = {
                 ],
                 description:
                     "Учебный проект для компьютерного сервисного центра, который помогает оформлять, отслеживать и оперировать заявками по ремонту компьютерной техники как клиентам, так и сотрудникам.",
+            },
+        ],
+    },
+    embedded: {
+        id: "embedded-projects",
+        header: "Embedded проекты",
+        assetsDirName: "embedded",
+        projectsArray: [
+            {
+                id: "pic-project",
+                name: "Проект по переводу шестнадцатеричного числа в восьмеричное число для микроконтроллера PIC16F877A",
+                swiperAssetsDirName: "pic-project",
+                techs: [
+                    {
+                        name: "C++",
+                        imageName: "c++.svg",
+                    },
+                ],
+                description:
+                    "Учебный проект для микроконтроллера PIC16F877A по переводу шестнадцатеричного числа в восьмеричное число.<br>Результат перевода числа сохраняется во внешнюю EEPROM (один из видов энергонезависимой памяти).",
+                githubLink: "https://github.com/JazzmanDV/pic-project",
             },
         ],
     },
