@@ -23,7 +23,7 @@
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .header:before,
     .nav__menu:before {
-        background: linear-gradient(to bottom right, #abccf9, #d6d6f9);
+        background: var(--linear-gradient);
         opacity: 0.9;
     }
 }

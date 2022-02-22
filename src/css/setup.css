@@ -11,6 +11,7 @@
 body {
     margin: 0;
     background-image: url("/src/img/5.jpg");
+    background-image: var(--linear-gradient);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -50,6 +51,7 @@ h6 {
     --color-primary-hovered: #0284c7;
     --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     --box-shadow-button: 0px 0px 7px 1px rgba(35, 60, 80, 0.2);
+    --linear-gradient: linear-gradient(to right, #b6ecff, #fff0ff);
 }
 
 h1,
