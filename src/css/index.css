@@ -1,18 +1,11 @@
-/* ---------------GENERAL SETUP--------------- */
-
 /* ---------SwiperJS--------- */
 @import "/src/swiper/swiper.css";
 
 /* ---------SETUP--------- */
 @import "/src/css/setup.css";
 
-/* ---------UTILS--------- */
-@import "/src/css/utils.css";
-
 /* ---------COMMON--------- */
 @import "/src/css/common.css";
-
-/* ---------------COMPONENTS--------------- */
 
 /* ---------HEADER--------- */
 @import "/src/components/header/header.css";
@@ -23,5 +16,8 @@
 /* ---------FOOTER--------- */
 @import "/src/components/footer/footer.css";
 
-/* ---------------ADAPTIVE--------------- */
+/* ---------ADAPTIVE--------- */
 @import "/src/css/adaptive.css";
+
+/* ---------UTILS--------- */
+@import "/src/css/utils.css";

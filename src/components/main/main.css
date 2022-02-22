@@ -60,19 +60,6 @@
 
 /* ---projects--- */
 
-.tech-list {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    list-style-type: none;
-    gap: 0.5rem;
-}
-
-.tech-list__item {
-    margin: auto 0;
-}
-
 .tech-list__item-wrapper {
     display: flex;
     align-items: center;
