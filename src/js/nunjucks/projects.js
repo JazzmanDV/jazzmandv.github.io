@@ -149,6 +149,29 @@ const projects = {
             },
         ],
     },
+    desktop: {
+        id: "desktop-projects",
+        header: "Desktop проекты",
+        assetsDirName: "desktop",
+        projectsArray: [
+            {
+                id: "planner-app",
+                name: `"Планировщик задач"`,
+                swiperAssetsDirName: "planner-app",
+                techs: [
+                    {
+                        name: "C++",
+                        imageName: "c++.svg",
+                    },
+                    {
+                        name: "Win Forms",
+                        imageName: "dotnet.svg",
+                    },
+                ],
+                description: "Приложение под Windows для планирования задач с уведомлением по таймеру.",
+            },
+        ],
+    },
     embedded: {
         id: "embedded-projects",
         header: "Embedded проекты",
