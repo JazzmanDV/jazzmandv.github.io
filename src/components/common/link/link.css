@@ -23,6 +23,7 @@
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    max-width: fit-content;
 }
 
 .link-external:not(:last-child) {
