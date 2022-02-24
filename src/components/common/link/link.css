@@ -11,10 +11,6 @@
     color: var(--color-primary-hovered);
 }
 
-.link:hover line {
-    stroke: var(--color-primary-hovered);
-}
-
 .link--thin {
     text-decoration-thickness: 1px;
 }
@@ -36,8 +32,4 @@
 
 .link-external__icon--s {
     width: 1em;
-}
-
-.link line {
-    transition: 0.25s stroke;
 }
