@@ -3,10 +3,12 @@ export default function openNavMenu() {
 
     navMenu.style.height = "auto";
     const fullHeight = getComputedStyle(navMenu).height;
-    navMenu.style.height = "0px";
 
     requestAnimationFrame(() => {
-        navMenu.style.height = fullHeight;
+        navMenu.style.height = "0px";
+        requestAnimationFrame(() => {
+            navMenu.style.height = fullHeight;
+        });
     });
 
     navMenu.classList.add("nav__menu--opened");
