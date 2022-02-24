@@ -11,6 +11,7 @@ const projects = {
         projectsArray: [
             {
                 name: "Сайт-резюме",
+                swiperAssetsDirName: "resume-website",
                 techs: [
                     {
                         name: "HTML",
