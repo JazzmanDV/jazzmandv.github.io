@@ -56,6 +56,10 @@ const projects = {
                         imageName: "js.svg",
                     },
                     {
+                        name: "TypeScript",
+                        imageName: "typescript.svg",
+                    },
+                    {
                         name: "React",
                         imageName: "react.svg",
                     },
