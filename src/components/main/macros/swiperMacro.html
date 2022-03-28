@@ -25,7 +25,7 @@
                     <div class="swiper-slide my-swiper-slide">
                         {% set regExp = r/.mp4$/gi %}
                         {% if regExp.test(swiperAssetName) %}
-                        <video controls muted
+                        <video controls
                             src="/src/img/projects/{{assetsDirName}}/{{swiperAssetsDirName}}/{{swiperAssetName}}"
                             class="my-swiper-slide__img"></video>
                         {% else %}

@@ -4,6 +4,7 @@ import prepareSwiper from "./prepareSwiper.js";
 import prepareNav from "./prepareNav.js";
 import prepareInternalLinks from "./prepareInternalLinks.js";
 import prepareButtonTry from "./prepareButtonTry.js";
+import prepareVideos from "./prepareVideos.js";
 
 export default function onDocumentReady() {
     checkLastInARow();
@@ -15,4 +16,5 @@ export default function onDocumentReady() {
     prepareNav();
     prepareInternalLinks();
     prepareButtonTry();
+    prepareVideos();
 }

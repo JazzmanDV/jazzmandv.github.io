@@ -72,10 +72,41 @@ const projects = {
                         imageName: "vite.svg",
                     },
                 ],
-                description: "Одностраничное приложение (SPA) для отслеживания задач (To Do App)",
+                description: "Одностраничное приложение (SPA) для отслеживания задач (To Do App).",
                 iframeLink: "https://jazzmandv.github.io/todo-app",
                 projectLink: "/todo-app",
                 githubLink: "https://github.com/JazzmanDV/todo-app",
+            },
+            {
+                id: "simon-game",
+                name: "Simon Game",
+                swiperAssetsDirName: "simon-game",
+                techs: [
+                    {
+                        name: "HTML",
+                        imageName: "html.svg",
+                    },
+                    {
+                        name: "CSS",
+                        imageName: "css.svg",
+                    },
+                    {
+                        name: "JavaScript",
+                        imageName: "js.svg",
+                    },
+                    {
+                        name: "Vue",
+                        imageName: "vue.svg",
+                    },
+                    {
+                        name: "Vite",
+                        imageName: "vite.svg",
+                    },
+                ],
+                description: "Классическая игра Simon.",
+                iframeLink: "https://jazzmandv.github.io/simon-game",
+                projectLink: "/simon-game",
+                githubLink: "https://github.com/JazzmanDV/simon-game",
             },
             {
                 id: "store-app",
