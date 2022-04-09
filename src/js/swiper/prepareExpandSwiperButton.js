@@ -1,4 +1,4 @@
-import { lockScroll, unlockScroll } from "./utils/scroll.js";
+import { lockScroll, unlockScroll } from "../utils/scroll.js";
 
 export default function prepareExpandSwiperButton(button) {
     button.addEventListener("click", () => {
