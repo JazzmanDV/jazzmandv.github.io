@@ -1,4 +1,4 @@
-import smoothScrollTo from "./utils/smoothScrollTo.js";
+import { smoothScrollToId } from "./utils/scroll.js";
 
 export default function prepareInternalLinks() {
     document.querySelectorAll(".link-internal").forEach((link) => {
@@ -10,7 +10,7 @@ export default function prepareInternalLinks() {
                 return;
             }
 
-            smoothScrollTo(id);
+            smoothScrollToId(id);
         });
     });
 }

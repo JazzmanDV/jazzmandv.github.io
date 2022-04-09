@@ -1,6 +1,6 @@
-import smoothScrollTo from "./utils/smoothScrollTo.js";
 import closeNavMenu from "./utils/closeNavMenu.js";
 import openNavMenu from "./utils/openNavMenu.js";
+import { smoothScrollToId } from "./utils/scroll.js";
 
 export default function prepareNav() {
     document.querySelector(".nav__button").addEventListener("click", () => {
@@ -23,7 +23,7 @@ export default function prepareNav() {
             }
 
             closeNavMenu();
-            smoothScrollTo(id);
+            smoothScrollToId(id);
         });
     });
 }
