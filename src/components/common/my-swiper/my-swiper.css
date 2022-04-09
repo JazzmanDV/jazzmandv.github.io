@@ -106,10 +106,6 @@
     background-color: #ffffff;
 }
 
-.body--full-screen {
-    overflow: hidden;
-}
-
 .my-inner-swiper-wrapper {
     width: 100%;
     height: 100%;

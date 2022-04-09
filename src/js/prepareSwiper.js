@@ -19,6 +19,19 @@ export default function prepareSwiper() {
 
     document.querySelectorAll(".my-inner-swiper-wrapper__expand-swiper-button").forEach((button) => {
         button.addEventListener("click", () => {
+            const scrollX = window.scrollX;
+            const scrollY = window.scrollY;
+
+            const disableScroll = () => {
+                window.scrollTo({
+                    left: scrollX,
+                    top: scrollY,
+                    behavior: "instant",
+                });
+            };
+
+            window.addEventListener("scroll", disableScroll, { passive: false });
+
             const body = document.querySelector("body");
             const outerSwiperWrapper = button.closest(".my-outer-swiper-wrapper");
 
@@ -43,14 +56,14 @@ export default function prepareSwiper() {
                 },
             });
 
-            body.classList.add("body--full-screen");
             replacer.classList.add("my-outer-swiper-wrapper--full-screen");
 
             function minimize() {
                 oldSwiper.slideTo(newSwiper.activeIndex, 0);
-
-                body.classList.remove("body--full-screen");
                 replacer.classList.add("my-outer-swiper-wrapper--full-screen-out");
+
+                window.removeEventListener("scroll", disableScroll);
+
                 setTimeout(() => {
                     newSwiper.destroy();
                     body.removeChild(replacer);
