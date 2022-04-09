@@ -2,9 +2,9 @@ import closeNavMenu from "./utils/closeNavMenu.js";
 
 export default function addMediaQueryCleaners() {
     // Сбрасываем стили для верхнего меню при увеличении ширины экрана
-    const mediaQueryMaxWidth770 = window.matchMedia("(max-width: 770px)");
-    mediaQueryMaxWidth770.addEventListener("change", () => {
-        if (!mediaQueryMaxWidth770.matches) {
+    const mediaQueryMaxWidth700 = window.matchMedia("(max-width: 700px)");
+    mediaQueryMaxWidth700.addEventListener("change", () => {
+        if (!mediaQueryMaxWidth700.matches) {
             closeNavMenu();
         }
     });
