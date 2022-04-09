@@ -70,9 +70,9 @@ export default function prepareSwiper() {
                 }, 500);
             }
 
-            replacer.querySelector(".my-inner-swiper-wrapper__expand-swiper-button").addEventListener("click", () => {
-                minimize();
-            });
+            replacer
+                .querySelector(".my-inner-swiper-wrapper__expand-swiper-button")
+                .addEventListener("click", minimize);
 
             const backgroundLayer = replacer.closest(".my-outer-swiper-wrapper");
             backgroundLayer.addEventListener("click", (e) => {
