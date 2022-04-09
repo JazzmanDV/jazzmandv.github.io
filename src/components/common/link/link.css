@@ -18,6 +18,7 @@
 .link-external {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 0.35rem;
     max-width: fit-content;
 }
