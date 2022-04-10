@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import * as styles from "./Nav.module.css";
 
@@ -11,11 +11,18 @@ const Nav = () => {
     const navMenuRef = useRef<HTMLUListElement>(null);
     const [isOpened, setIsOpened] = useState(false);
 
-    const mediaQueryMaxWidth700 = window.matchMedia("(max-width: 700px)");
-    mediaQueryMaxWidth700.addEventListener("change", () => {
-        if (!mediaQueryMaxWidth700.matches) {
-            setIsOpened(false);
-        }
+    useEffect(() => {
+        const mediaQueryMaxWidth700 = window.matchMedia("(max-width: 700px)");
+        const onMediaQueryChange = () => {
+            if (!mediaQueryMaxWidth700.matches) {
+                setIsOpened(false);
+            }
+        };
+        mediaQueryMaxWidth700.addEventListener("change", onMediaQueryChange);
+
+        return () => {
+            mediaQueryMaxWidth700.removeEventListener("change", onMediaQueryChange);
+        };
     });
 
     const openNavMenu = () => {

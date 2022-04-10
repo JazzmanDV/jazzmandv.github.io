@@ -1,11 +1,9 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
-    siteMetadata: {
-        title: "Resume Website",
-        siteUrl: "https://jazzmandv.github.io",
-    },
+    pathPrefix: "./",
     plugins: [
+        "gatsby-plugin-react-helmet",
         "gatsby-plugin-postcss",
         "gatsby-plugin-image",
         "gatsby-plugin-sharp",
