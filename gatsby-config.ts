@@ -14,7 +14,6 @@ const config: GatsbyConfig = {
                 name: "images",
                 path: "./src/images/",
             },
-            __key: "images",
         },
         {
             resolve: "gatsby-plugin-react-svg",
