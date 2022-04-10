@@ -1,8 +1,8 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "gatsby";
 
 // markup
-const NotFoundPage = () => {
+const NotFoundPage: FC = () => {
     return (
         <main>
             <p>404</p>

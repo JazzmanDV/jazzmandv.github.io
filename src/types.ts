@@ -3,9 +3,14 @@ type NavMenuProps = {
 };
 
 type NavMenuItemProps = {
-    href: String;
-    text: String;
+    href: string;
+    text: string;
     tabIndex?: number;
 };
 
-export { NavMenuProps, NavMenuItemProps };
+type ExternalLinkProps = {
+    className?: string;
+    href: string;
+};
+
+export { NavMenuProps, NavMenuItemProps, ExternalLinkProps };

@@ -7,9 +7,9 @@
     flex-wrap: wrap;
 }
 
-/* @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .nav-menu:before {
         background: var(--linear-gradient);
         opacity: 0.9;
     }
-} */
+}
