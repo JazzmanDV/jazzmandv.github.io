@@ -7,9 +7,48 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 700px) {
+    .nav-menu {
+        position: absolute;
+        bottom: 0;
+
+        z-index: -1;
+
+        transform: translateY(100%);
+
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+
+        height: 0;
+        overflow: hidden;
+
+        padding: 0 0.5rem;
+
+        box-shadow: var(--box-shadow);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+        background-color: var(--background-color);
+
+        transition: var(--duration-m) height;
+    }
+
+    .nav-menu:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        backdrop-filter: blur(20px);
+    }
+}
+
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .nav-menu:before {
-        background: var(--linear-gradient);
-        opacity: 0.9;
+        background-color: var(--background-color-button);
     }
 }

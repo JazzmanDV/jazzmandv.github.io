@@ -7,7 +7,7 @@ import * as styles from "./NavMenuItem.module.css";
 const NavMenuItem: FC<NavMenuItemProps> = ({ href, text, tabIndex }) => {
     return (
         <li className={styles.item}>
-            <a className={styles.link} href={`#${href}`} tabIndex={tabIndex}>
+            <a tabIndex={tabIndex} href={href} className={styles.itemLink}>
                 {text}
             </a>
         </li>

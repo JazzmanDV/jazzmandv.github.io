@@ -1,3 +1,145 @@
 .button {
+    cursor: pointer;
+
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    padding: 0.25rem;
+
+    box-shadow: var(--box-shadow-button);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 0.5rem;
+
+    background-color: var(--background-color-button);
+
+    transition: var(--duration-s) color;
+
+    --translate-y: 0.55rem;
+}
+
+.button-line {
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-primary);
+
+    transform-origin: center;
+    transition: var(--duration-s) background-color;
+}
+
+.button:hover .button-line {
+    background-color: var(--color-primary-hovered);
+}
+
+@keyframes line-1-in {
+    from {
+    }
+    50% {
+        transform: translateY(var(--translate-y));
+    }
+    to {
+        transform: translateY(var(--translate-y)) rotate(45deg);
+    }
+}
+
+@keyframes line-1-out {
+    from {
+        transform: translateY(var(--translate-y)) rotate(45deg);
+    }
+    50% {
+        transform: translateY(var(--translate-y));
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes line-2-in {
+    from {
+    }
+    50% {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes line-2-out {
+    from {
+        transform: scaleX(0);
+    }
+    50% {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes line-3-in {
+    from {
+    }
+    50% {
+        transform: translateY(calc(var(--translate-y) * -1));
+    }
+    to {
+        transform: translateY(calc(var(--translate-y) * -1)) rotate(135deg);
+    }
+}
+
+@keyframes line-3-out {
+    from {
+        transform: translateY(calc(var(--translate-y) * -1)) rotate(135deg);
+    }
+    50% {
+        transform: translateY(calc(var(--translate-y) * -1));
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.button-line:nth-child(1),
+.button-line:nth-child(2),
+.button-line:nth-child(3) {
+    animation-duration: var(--duration-m);
+    animation-direction: both;
+    animation-fill-mode: both;
+}
+
+.button.button-active .button-line:nth-child(1) {
+    animation-name: line-1-in;
+}
+
+.button:not(.button-active) .button-line:nth-child(1) {
+    animation-name: line-1-out;
+}
+
+.button.button-active .button-line:nth-child(2) {
+    animation-name: line-2-in;
+}
+
+.button:not(.button-active) .button-line:nth-child(2) {
+    animation-name: line-2-out;
+}
+
+.button.button-active .button-line:nth-child(3) {
+    animation-name: line-3-in;
+}
+
+.button:not(.button-active) .button-line:nth-child(3) {
+    animation-name: line-3-out;
+}
+
+@media (max-width: 700px) {
+    .button {
+        display: flex;
+    }
 }

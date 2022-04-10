@@ -14,23 +14,14 @@
     backdrop-filter: blur(20px);
 }
 
-/* .header:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    backdrop-filter: blur(20px);
-} */
+@media (max-width: 700px) {
+    .header {
+        padding: 0 0.5rem;
+    }
+}
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
     .header {
         background: var(--linear-gradient);
-        opacity: 0.9;
-    }
-}
-
-@media (max-width: 700px) {
-    .header {
-        padding: 0 0.5rem;
     }
 }

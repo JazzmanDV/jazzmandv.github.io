@@ -2,20 +2,20 @@ import { NavMenuItemProps } from "../../../types";
 
 const navMenuItems: Array<NavMenuItemProps> = [
     {
-        href: "about-me",
+        href: "#about-me",
         text: "Обо мне",
         tabIndex: 2,
     },
     {
-        href: "frontend-projects",
+        href: "#frontend-projects",
         text: "Front-End проекты",
     },
     {
-        href: "fullstack-projects",
+        href: "#fullstack-projects",
         text: "Другие проекты",
     },
     {
-        href: "footer",
+        href: "#footer",
         text: "Контакты",
     },
 ];

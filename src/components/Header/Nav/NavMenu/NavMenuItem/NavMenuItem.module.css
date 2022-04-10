@@ -13,20 +13,38 @@
     background-color: var(--color-primary);
 }
 
-.link {
+.item-link {
     display: inline-block;
     width: 100%;
     padding: 0 0.5rem;
     text-decoration: none;
 
     color: var(--color-primary);
-    transition: 0.25s color;
+    transition: var(--duration-s) color;
 }
 
-.link:visited {
+.item-link:visited {
     color: var(--color-primary);
 }
 
-.link:hover {
+.item-link:hover {
     color: var(--color-primary-hovered);
+}
+
+@media (max-width: 700px) {
+    .item {
+        width: 100%;
+    }
+
+    .item:not(:last-child) {
+        border-bottom: 1px solid var(--color-primary);
+    }
+
+    .item:not(:last-child):after {
+        display: none;
+    }
+
+    .item-link {
+        padding: 0.5rem 0;
+    }
 }

@@ -2,7 +2,7 @@
     color: var(--color-primary);
     text-decoration-thickness: 1px;
 
-    transition: 0.25s color;
+    transition: var(--duration-s) color;
 }
 
 .link:visited {

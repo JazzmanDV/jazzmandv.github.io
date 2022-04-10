@@ -1,4 +1,7 @@
+import { Dispatch, SetStateAction } from "react";
+
 type NavMenuProps = {
+    isOpened: boolean;
     navMenuItems: Array<NavMenuItemProps>;
 };
 
@@ -8,9 +11,14 @@ type NavMenuItemProps = {
     tabIndex?: number;
 };
 
+type NavButtonProps = {
+    isOpened: boolean;
+    setIsOpened: Dispatch<SetStateAction<boolean>>;
+};
+
 type ExternalLinkProps = {
     className?: string;
     href: string;
 };
 
-export { NavMenuProps, NavMenuItemProps, ExternalLinkProps };
+export { NavMenuProps, NavMenuItemProps, NavButtonProps, ExternalLinkProps };

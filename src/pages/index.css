@@ -45,13 +45,21 @@ h6 {
 :root {
     font-size: 20px;
 
-    --background-color: rgba(255, 255, 255, 0.2);
-    --background-color-button: rgba(255, 255, 255, 0.8);
-    --color-primary: #000000;
-    --color-primary-hovered: #0284c7;
+    --linear-gradient: linear-gradient(to right, #b6ecff, #fff0ff);
+
     --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     --box-shadow-button: 0px 0px 7px 1px rgba(35, 60, 80, 0.2);
-    --linear-gradient: linear-gradient(to right, #b6ecff, #fff0ff);
+
+    --border-color: rgba(255, 255, 255, 0.5);
+
+    --background-color: rgba(255, 255, 255, 0.2);
+    --background-color-button: rgba(255, 255, 255, 1);
+
+    --color-primary: #000000;
+    --color-primary-hovered: #0284c7;
+
+    --duration-s: 0.25s;
+    --duration-m: 0.5s;
 }
 
 h1,

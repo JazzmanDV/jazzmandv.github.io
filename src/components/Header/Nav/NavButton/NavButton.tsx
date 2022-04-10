@@ -1,11 +1,22 @@
-import React from "react";
+import React, { FC } from "react";
+import classnames from "classnames";
 
-const NavButton = () => {
+import * as styles from "./NavButton.module.css";
+
+import { NavButtonProps } from "../../../../types";
+
+const NavButton: FC<NavButtonProps> = ({ isOpened, setIsOpened }) => {
     return (
-        <button className="button button-square nav__button" tabIndex={1}>
-            <span className="nav__button-line"></span>
-            <span className="nav__button-line"></span>
-            <span className="nav__button-line"></span>
+        <button
+            tabIndex={1}
+            className={classnames(styles.button, { [styles.buttonActive]: isOpened })}
+            onClick={() => {
+                setIsOpened((state) => !state);
+            }}
+        >
+            <span className={styles.buttonLine}></span>
+            <span className={styles.buttonLine}></span>
+            <span className={styles.buttonLine}></span>
         </button>
     );
 };
