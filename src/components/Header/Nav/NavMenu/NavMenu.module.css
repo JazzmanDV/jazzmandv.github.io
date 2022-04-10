@@ -1,0 +1,15 @@
+.nav-menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .nav-menu:before {
+        background: var(--linear-gradient);
+        opacity: 0.9;
+    }
+} */

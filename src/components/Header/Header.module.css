@@ -1,0 +1,28 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+
+    padding: 0 1rem;
+
+    box-shadow: var(--box-shadow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: var(--background-color);
+}
+
+.header:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    backdrop-filter: blur(20px);
+}
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .header:before {
+        background: var(--linear-gradient);
+        opacity: 0.9;
+    }
+}

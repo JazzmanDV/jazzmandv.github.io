@@ -1,0 +1,74 @@
+*,
+*:before,
+*:after {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: var(--linear-gradient);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    font-size: 20px;
+
+    --background-color: rgba(255, 255, 255, 0.2);
+    --background-color-button: rgba(255, 255, 255, 0.8);
+    --color-primary: #000000;
+    --color-primary-hovered: #0284c7;
+    --box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    --box-shadow-button: 0px 0px 7px 1px rgba(35, 60, 80, 0.2);
+    --linear-gradient: linear-gradient(to right, #b6ecff, #fff0ff);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul {
+    margin: 0 0 0.5rem 0;
+}
+
+section {
+    margin: 0 0 1rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
