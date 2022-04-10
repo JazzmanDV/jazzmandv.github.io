@@ -2,8 +2,8 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import * as styles from "./Nav.module.css";
 
-import NavMenu from "./NavMenu/NavMenu";
-import NavButton from "./NavButton/NavButton";
+import NavMenu from "../NavMenu/NavMenu";
+import NavButton from "../NavButton/NavButton";
 
 import navMenuItems from "./navMenuItems";
 

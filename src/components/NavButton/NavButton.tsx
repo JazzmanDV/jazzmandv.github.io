@@ -3,7 +3,7 @@ import classnames from "classnames";
 
 import * as styles from "./NavButton.module.css";
 
-import { NavButtonProps } from "../../../types";
+import { NavButtonProps } from "../../types";
 
 const NavButton: FC<NavButtonProps> = ({ isOpened, setIsOpened }) => {
     return (
