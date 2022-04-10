@@ -4,7 +4,7 @@ import classnames from "classnames";
 import * as styles from "./NavMenu.module.css";
 
 import { NavMenuProps } from "../../types";
-import NavMenuItem from "./NavMenuItem/NavMenuItem";
+import NavMenuItem from "../NavMenuItem/NavMenuItem";
 
 const NavMenu = forwardRef<HTMLUListElement, NavMenuProps>(({ isOpened, navMenuItems }, ref) => {
     const mappedNavMenuItems = navMenuItems.map((navMenuItem, index) => (
