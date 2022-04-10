@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { NavMenuItemProps } from "../../../../../types";
+import { NavMenuItemProps } from "../../../../types";
 
 import * as styles from "./NavMenuItem.module.css";
 
