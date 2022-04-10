@@ -11,6 +11,13 @@ const Nav = () => {
     const navMenuRef = useRef<HTMLUListElement>(null);
     const [isOpened, setIsOpened] = useState(false);
 
+    const mediaQueryMaxWidth700 = window.matchMedia("(max-width: 700px)");
+    mediaQueryMaxWidth700.addEventListener("change", () => {
+        if (!mediaQueryMaxWidth700.matches) {
+            setIsOpened(false);
+        }
+    });
+
     const openNavMenu = () => {
         const navMenu = navMenuRef.current;
 
