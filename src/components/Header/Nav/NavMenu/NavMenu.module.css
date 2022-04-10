@@ -35,20 +35,14 @@
 
         background-color: var(--background-color);
 
-        transition: var(--duration-m) height;
-    }
-
-    .nav-menu:before {
-        content: "";
-        position: absolute;
-        inset: 0;
-
         backdrop-filter: blur(20px);
+
+        transition: var(--duration-m) height;
     }
 }
 
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .nav-menu:before {
+    .nav-menu {
         background-color: var(--background-color-button);
     }
 }
