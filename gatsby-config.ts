@@ -1,7 +1,6 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
-    pathPrefix: "./",
     plugins: [
         "gatsby-plugin-react-helmet",
         "gatsby-plugin-postcss",
