@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import classnames from "classnames";
 
-import * as styles from "./NavButton.module.css";
+import type { NavButtonProps } from "../../types";
 
-import { NavButtonProps } from "../../types";
+import * as styles from "./NavButton.module.css";
 
 const NavButton: FC<NavButtonProps> = ({ isOpened, setIsOpened }) => {
     return (

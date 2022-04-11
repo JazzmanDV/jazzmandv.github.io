@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import classnames from "classnames";
 
-import * as styles from "./ExternalLink.module.css";
+import type { ExternalLinkProps } from "../../types";
 
-import { ExternalLinkProps } from "../../types";
+import * as styles from "./ExternalLink.module.css";
 
 const ExternalLink: FC<ExternalLinkProps> = ({ className, href, children }) => {
     return (

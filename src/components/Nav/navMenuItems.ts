@@ -1,4 +1,4 @@
-import { NavMenuItemProps } from "../../types";
+import type { NavMenuItemProps } from "../../types";
 
 const navMenuItems: Array<NavMenuItemProps> = [
     {

@@ -3,6 +3,7 @@ import React from "react";
 import "./index.css";
 
 import { Helmet } from "react-helmet";
+
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";

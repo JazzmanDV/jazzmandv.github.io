@@ -21,4 +21,4 @@ type ExternalLinkProps = {
     href: string;
 };
 
-export { NavMenuProps, NavMenuItemProps, NavButtonProps, ExternalLinkProps };
+export type { NavMenuProps, NavMenuItemProps, NavButtonProps, ExternalLinkProps };
