@@ -5,13 +5,13 @@ import type { NavButtonProps } from "../../types";
 
 import * as styles from "./NavButton.module.css";
 
-const NavButton: FC<NavButtonProps> = ({ isOpened, setIsOpened }) => {
+const NavButton: FC<NavButtonProps> = ({ isNavMenuOpened, setIsNavMenuOpened }) => {
     return (
         <button
             tabIndex={1}
-            className={classnames(styles.button, { [styles.buttonActive]: isOpened })}
+            className={classnames(styles.button, { [styles.buttonActive]: isNavMenuOpened })}
             onClick={() => {
-                setIsOpened((state) => !state);
+                setIsNavMenuOpened((state) => !state);
             }}
         >
             <span className={styles.buttonLine}></span>

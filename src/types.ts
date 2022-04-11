@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 type NavMenuProps = {
-    isOpened: boolean;
+    isNavMenuOpened: boolean;
     navMenuItems: Array<NavMenuItemProps>;
 };
 
@@ -12,8 +12,8 @@ type NavMenuItemProps = {
 };
 
 type NavButtonProps = {
-    isOpened: boolean;
-    setIsOpened: Dispatch<SetStateAction<boolean>>;
+    isNavMenuOpened: boolean;
+    setIsNavMenuOpened: Dispatch<SetStateAction<boolean>>;
 };
 
 type ExternalLinkProps = {

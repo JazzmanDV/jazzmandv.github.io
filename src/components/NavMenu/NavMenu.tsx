@@ -6,7 +6,7 @@ import * as styles from "./NavMenu.module.css";
 
 import NavMenuItem from "../NavMenuItem/NavMenuItem";
 
-const NavMenu: FC<NavMenuProps> = ({ isOpened, navMenuItems }) => {
+const NavMenu: FC<NavMenuProps> = ({ isNavMenuOpened, navMenuItems }) => {
     const navMenuRef = useRef<HTMLUListElement>(null);
 
     const openNavMenu = () => {
@@ -38,10 +38,10 @@ const NavMenu: FC<NavMenuProps> = ({ isOpened, navMenuItems }) => {
     };
 
     const toggleNavMenu = () => {
-        isOpened ? openNavMenu() : closeNavMenu();
+        isNavMenuOpened ? openNavMenu() : closeNavMenu();
     };
 
-    useLayoutEffect(toggleNavMenu, [isOpened]);
+    useLayoutEffect(toggleNavMenu, [isNavMenuOpened]);
 
     const mappedNavMenuItems = useMemo(
         () =>

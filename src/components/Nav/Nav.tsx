@@ -8,13 +8,13 @@ import NavButton from "../NavButton/NavButton";
 import navMenuItems from "./navMenuItems";
 
 const Nav = () => {
-    const [isOpened, setIsOpened] = useState(false);
+    const [isNavMenuOpened, setIsNavMenuOpened] = useState(false);
 
     useEffect(() => {
         const mediaQueryMaxWidth700 = window.matchMedia("(max-width: 700px)");
         const onMediaQueryChange = () => {
             if (!mediaQueryMaxWidth700.matches) {
-                setIsOpened(false);
+                setIsNavMenuOpened(false);
             }
         };
         mediaQueryMaxWidth700.addEventListener("change", onMediaQueryChange);
@@ -26,8 +26,8 @@ const Nav = () => {
 
     return (
         <nav className={styles.nav}>
-            <NavMenu isOpened={isOpened} navMenuItems={navMenuItems} />
-            <NavButton isOpened={isOpened} setIsOpened={setIsOpened} />
+            <NavMenu isNavMenuOpened={isNavMenuOpened} navMenuItems={navMenuItems} />
+            <NavButton isNavMenuOpened={isNavMenuOpened} setIsNavMenuOpened={setIsNavMenuOpened} />
         </nav>
     );
 };
