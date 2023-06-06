@@ -10,7 +10,7 @@
         "@vitejs/plugin-legacy": "^1.7.1",
         "postcss": "^8.4.6",
         "postcss-preset-env": "^7.3.1",
-        "vite": "^2.8.4",
+        "vite": "^2.9.16",
         "vite-plugin-nunjucks": "^0.1.10"
     }
 }
